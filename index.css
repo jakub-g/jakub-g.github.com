@@ -59,6 +59,16 @@ a:active::-moz-selection {
     max-width: 1000px;
 }
 
+   h1.clear {
+      clear: both;
+      margin: 0 40px;
+      color: #999;
+      background-color: #760454;
+       border-radius: 0 10px 0 10px;
+      margin: 0;
+      padding: 0 50px;
+   }
+
    .entryBlock {
     width: 46%;
     margin: 2%;
@@ -71,7 +81,7 @@ a:active::-moz-selection {
         padding: 1px 13px;
       }
    #about {
-    width: 66%;
+    width: 95%;
     background-color: #333;
     color: #fff;
    }
@@ -94,4 +104,27 @@ a:active::-moz-selection {
 }
 #bottomBar a {
     color:#fdd;
+}
+
+ul.linkroll {
+    float: right;
+    display: block;
+    clear: both;
+    background-color: #666;
+    width: 400px;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+ul.linkroll > li {
+    display: list-item;
+    float: left;
+    margin-left: 20px;
+}
+ul.linkroll a {
+    color: #ccc !important;
+}
+h2.hello {
+    display: inline-block;
+    clear: both;
+    margin-bottom:0;
 }
