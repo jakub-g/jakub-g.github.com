@@ -19,7 +19,7 @@
         }
         pre.source-code {border:1px solid black; background-color:linen; padding:4px; border-radius:5px;}
         li {line-height:150%;}
-        
+
         .support0 {background-color:red; color:white;}
         .support50 {background-color:orange;}
         .support80 {background-color:#f2ff00;}
@@ -36,7 +36,7 @@
         .sample:focus,
         .focused
             {border:3px solid blue; background-color:white;} /*outline poorly supported*/
-            
+
     </style>
 </head>
 
@@ -44,16 +44,16 @@
 <body>
     <h1>Keyboard support for <code>onclick</code> statements on HTML tags<br/>
     <small>Accessibility test case & compatibility table</small></h1>
-    
+
     <hr/>
-    
+
     <h1>Question</h1>
-    
+
     <p>Is your interactive site friendly for keyboard users?</p>
     <p>If you have lots of <code>onclick</code> events bound in many places in your code to execute some JavaScript, under certain
         circumstances keyboard users will be able to work with it just fine, but it's not always the case, and it depends heavily
         on the browser. This page is supposed to be a review of pros and cons of various attitudes.</p>
-    
+
     <h1>Why keyboard support matters</h1>
     <ul>
         <li>For people with <a tabindex="0" href="http://en.wikipedia.org/wiki/Repetitive_strain_injury">Repetitive strain injury</a>,
@@ -65,7 +65,7 @@
         <li>Mouse/touchpad might be unavailable / malfunctioning etc.</li>
         <li>For the reasons above, operability of interfaces through the keyboard is a part of <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.0</a> guidelines.</li>
     </ul>
-    
+
     <h1>Usage</h1>
 
     <p>All of the HTML tags below in the leftmost column (in the dotted frames) have:
@@ -74,7 +74,7 @@
         <li><code>onclick : "alert('hi')"</code> (added via <code>addEventListener</code>/<code>attachEvent</code>)</li>
         </ul>
     </p>
-    
+
     <h3>TAB-navigate through the items. Click <kbd>ENTER</kbd> when each of
         the items has focus, to check whether <code>onclick</code>
         will be fired when you activate the item from keyboard.</h3>
@@ -85,7 +85,7 @@
     <li>OTHER = onclick fired, but with side-effects (either when launched from keyboard or mouse).
     <li>See also: <a href="http://websiteaccessibility.donaldevans.com/2011/06/30/when-does-onclick-work-with-the-keyboard-enter-key/#">onclick + JAWS</a>
     </ul>
-            
+
 
     <table class="matrix">
     <thead>
@@ -160,7 +160,7 @@
        to <code>onmousedown</code> (but this works only in Firefox, and
        is far from being user-friendly, so it should not be used). However,
        since the newly opened page is blank, it's not a really big deal.<br/><br/>
-       
+
        ** Resetting the hash has also a side-effect of scrolling to the top. To prevent this,
        one can use <code>#nonExistingAnchor</code> in a link instead of just <code>#</code>,
        and then no scrolling would take place. A sensible convention can be to use
@@ -168,7 +168,7 @@
        any object on the page with that id). Furthermore, in modern versions of
        Firefox, Chrome and Opera, you can do a following hack (taking advantage of History API)
        to restore the old hash:
-                
+
 <pre class="source-code">
 &lt;a href="#void" onclick="alert('hi');"&gt;click me&lt;/a&gt;
 &lt;script&gt;
@@ -186,12 +186,12 @@
        doesn't have any event listeners attached -- astonishingly moves
        the focus to the closest <code>&lt;button&gt;</code> in the markup (!).
        Not the case if clicking the element by mouse.<br/><br/>
-       
+
        **** User can opt in via <em>Preferences > Advanced > "Press
        Tab to highlight each item on a webpage"</em>.
        The default behavior is ridiculous, but power users who want keyboard accessibility
        certainly will have the option enabled.<br/><br/>
-          
+
        ***** <kbd>TAB</kbd>-navigation in Opera
        is separated from navigation over the links. <kbd>TAB</kbd>-navigation cycles <strong>only over
        the elements that have explicitly set <code>tabindex</code></strong> e.g. to 0 (and by default,
@@ -202,16 +202,16 @@
        <kbd>CTRL</kbd>-<kbd>UP/DOWN</kbd> moves the focus to the closest element of the currently focused one.
        Still, if one wants to force all links to be accessible also by <kbd>TAB</kbd>, the <code>tabindex="0"</code>
        can be added to them to achieve this.<br/><br/>
-       
+
        <strong>By the way, remember not to override this shortcut (<kbd>CTRL</kbd>-<kbd>UP/DOWN</kbd>)
        if you're going to enable rich keyboard shortcuts in your application</strong>, as you can do more harm
        than good to the users of Opera who are accustomed to this browser shortcuts.
-                
+
     </td></tr></tfoot>
     </table>
-    
+
     <h1>Corollaries</h1>
-    
+
     <p>To provide keyboard-navigability of your control on the page:</p>
     <ul>
         <li>Do not attach <code>onclick</code> event listeners to <code>div</code>s, <code>span</code>s etc. </li>
@@ -228,7 +228,7 @@
             which state that input, buttons and anchors have to be used to provide keyboard accessibility,
             should be followed.</li>
     </ul>
-    
+
     <script type="text/javascript">
 
         function handler(e){
@@ -246,7 +246,7 @@
             var e=window.event, target=e.srcElement;
             target.className = target.className.replace("focused","");
         }
-        
+
         function init(){
             for(var i=1; i<=7; ++i){
                 var elm=document.getElementById('foo'+i);
@@ -271,8 +271,9 @@
                 return msg;
             };
         }
-        
+
         init();
     </script>
+    <script type="text/javascript" src="ga.js"></script>
 </body>
 </html>
