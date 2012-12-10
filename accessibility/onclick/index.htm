@@ -2,59 +2,48 @@
 <html lang="en"><!-- https://github.com/jakub-g/ -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Accessibility test case - can I launch onclick from keyboard?</title>
-    <style>
-        body{background-color:#f0f0f0; font-family:sans-serif; font-size:10pt;}
-        table, td {border-radius:8px;}
-        code {color:#00f; font-weight:bold;}
-        kbd {
-            padding:1px 5px;
-            background:#ddd;
-            color:#000;
-            display: inline-block;
-            border-left:1px solid #aaa;
-            border-top:1px solid #aaa;
-            border-bottom:1px solid black;
-            border-right:1px solid black;
-        }
-        pre.source-code {border:1px solid black; background-color:linen; padding:4px; border-radius:5px;}
-        li {line-height:150%;}
-
-        .support0 {background-color:red; color:white;}
-        .support50 {background-color:orange;}
-        .support80 {background-color:#f2ff00;}
-        .support90 {background-color:#ab0;}
-        .support100 {background-color:green; color:white;}
-
-        table.matrix {table-layout:fixed; border:2px solid black;}
-        table.matrix td{width:12%; text-align:center; padding:15px;}
-        table.matrix tfoot td{border-top:2px solid black; text-align:left;}
-        table.matrix thead td{background-color:black; color:white; font-weight:bold;}
-        table.matrix tbody td{font-weight:normal;}
-
-        .sample {display:block; width:100%; padding:0; border:3px dotted black;}
-        .sample:focus,
-        .focused
-            {border:3px solid blue; background-color:white;} /*outline poorly supported*/
-
-    </style>
+    <title>Is your rich JavaScript app keyboard-friendly?</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 
 
 <body>
-    <h1>Keyboard support for <code>onclick</code> statements on HTML tags<br/>
-    <small>Accessibility test case & compatibility table</small></h1>
+<div id="main">
+
+    <h1>Is your rich JavaScript app keyboard-friendly?</h1>
+    <h3>Keyboard support for <code>onclick</code> statements on HTML tags<br/>
+    <small>Accessibility demo test case & compatibility table</small></h3>
 
     <hr/>
 
-    <h1>Question</h1>
+<h1 id="question">Question</h1>
+
+    <p>So, you have a lot of code like this:
+    <code class="codeContainer">
+        &lt;span onclick="foo()"&gt; content &lt;/span&gt;
+    </code>(or you dynamically attach event listeners).</p>
+
+    <h2 class="q"><strong>Will I be able to use your page if I don't have a mouse? Or if I prefer keyboard?</strong></h2>
+
+<h1 id="tldr">TL;DR</h1>
+
+    <p>For maximum portability, please use the following instead:
+    <code class="codeContainer">
+        &lt;a tabindex="0" href="javascript:void(0);" onclick="foo()"&gt; content &lt;/a&gt;
+    </code>
+
+    <p>Ideally, you should use <code>button</code>s, but I doubt you will.</p>
+
+    <hr class="bigmargin"/>
+
+<h1 id="intro">Introduction</h1>
 
     <p>Is your interactive site friendly for keyboard users?</p>
     <p>If you have lots of <code>onclick</code> events bound in many places in your code to execute some JavaScript, under certain
         circumstances keyboard users will be able to work with it just fine, but it's not always the case, and it depends heavily
         on the browser. This page is supposed to be a review of pros and cons of various attitudes.</p>
 
-    <h1>Why keyboard support matters</h1>
+<h1 id="why">Why keyboard support matters</h1>
     <ul>
         <li>For people with <a tabindex="0" href="http://en.wikipedia.org/wiki/Repetitive_strain_injury">Repetitive strain injury</a>,
             it's much better to use the keyboard than the mouse whenever possible.</li>
@@ -66,9 +55,16 @@
         <li>For the reasons above, operability of interfaces through the keyboard is a part of <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.0</a> guidelines.</li>
     </ul>
 
-    <h1>Usage</h1>
+<h1 id="disclaimer">Disclaimer</h1>
 
-    <p>All of the HTML tags below in the leftmost column (in the dotted frames) have:
+    <ul>
+        <li>All tests under Windows XP. Let me know if there are some cross-platform discrepancies.</li>
+        <li>If you know some workarounds or other problems not mentioned here, I'm looking for your feedback!</li>
+    </ul>
+
+<h1 id="usage">Usage</h1>
+
+    <p>All of the HTML tags below in the leftmost column have:
         <ul>
         <li><code>tabindex="0"</code> to make them <kbd>TAB</kbd>-navigable from keyboard</li>
         <li><code>onclick : "alert('hi')"</code> (added via <code>addEventListener</code>/<code>attachEvent</code>)</li>
@@ -77,15 +73,16 @@
 
     <h3>TAB-navigate through the items. Click <kbd>ENTER</kbd> when each of
         the items has focus, to check whether <code>onclick</code>
-        will be fired when you activate the item from keyboard.</h3>
+        will be fired when you activate the item from <u>keyboard</u>.</h3>
 
     <ul>
-    <li>GREEN = onclick event fired from keyboard without side-effects.
-    <li>RED [not fired] = onclick event not fired from keyboard, only from mouse.
-    <li>OTHER = onclick fired, but with side-effects (either when launched from keyboard or mouse).
+    <li><div class="sampleSample green">GREEN</div> = onclick event <strong>fired from keyboard</strong>, without side-effects.
+    <li><div class="sampleSample red">RED</div> = onclick event <strong>NOT fired from keyboard</strong>, only from mouse.
+    <li><div class="sampleSample other">OTHER</div> = onclick <strong>fired from keyboard</strong>, but with side-effects (either when launched from keyboard or mouse).
     <li>See also: <a href="http://websiteaccessibility.donaldevans.com/2011/06/30/when-does-onclick-work-with-the-keyboard-enter-key/#">onclick + JAWS</a>
     </ul>
 
+    <input class="startinput" type="text" value="click here to start; then use TAB to focus the items below" />
 
     <table class="matrix">
     <thead>
@@ -93,7 +90,7 @@
             <td>Example</td>
             <td>IE8</td>
             <td>IE7/IE9/IE10</td>
-            <td>Firefox3.6...Fx16</td>
+            <td>Firefox3.6...Fx18</td>
             <td>Opera 11.6...12.0</td>
             <td>Chrome18...22</td>
             <td>Safari 5.1.7</td>
@@ -101,67 +98,67 @@
     </thead>
     <tbody>
         <tr>
-            <td class="sampleTd"><span   tabindex="0" class="sample ko" id="foo1">i'm a &lt;span&gt; (or div)</span></td>
-            <td class="support80">focus can be lost after***</td>
-            <td class="support0">not fired</td>
-            <td class="support0">not fired</td>
+            <td class="sampleTd"><input  tabindex="0" class="sample ok" id="foo5" type="button"  value="&lt;input type=&quot;button&quot;&gt;"></td>
             <td class="support100"></td>
-            <td class="support0">not fired</td>
-            <td class="support0">not fired</td>
-        </tr>
-        <tr>
-          <td class="sampleTd"><a      tabindex="0" class="sample ko" id="foo2">i'm a &lt;a&gt; WITHOUT href.</a>	</td>
-            <td class="support80">focus can be lost after***</td>
-            <td class="support0">not fired</td>
-            <td class="support0">not fired</td>
             <td class="support100"></td>
-            <td class="support0">not fired</td>
-            <td class="support0">not fired</td>
+            <td class="support100"></td><td class="support100"></td><td class="support100"></td><td class="support100"></td>
         </tr>
         <tr>
-            <td class="sampleTd"><a      tabindex="0" class="sample orange" id="foo3" href="#">i'm a &lt;a&gt; WITH href = #</a>	</td>
-            <td class="support50" colspan="2">resets hash**;<br/> opens a copy of the page on middle click</td>
-            <td class="support50" colspan="2">resets hash**;<br/> opens a copy of the page on middle click</td>
-            <td class="support50">resets hash**;<br/> opens new page on middle click<br/>(but only when current URL is different than link href)</td>
-            <td class="support0" rowspan="3">not focusable via <kbd>TAB</kbd>bing<br/>by default!****</td>
-        </tr>
-        <tr>
-            <td class="sampleTd"> <a     tabindex="0" class="sample yellow" id="foo4" href="javascript:void(0); return false;">i'm a &lt;a&gt; WITH href=javascript:void(0);</a></td>
-            <td class="support90" colspan="2">Asks "Are you sure you want to navigate away from this page?"
-                when <code>window.onbeforeunload</code> defined (both from keyboard/mouse click) <strong>unless</strong>
-                the event listeners does <code>return false</code></td>
-            <td class="support90" colspan="2">opens blank new page on mouse middle click*</td>
+            <td class="sampleTd"><button tabindex="0" class="sample ok" id="foo6" >&lt;button&gt;</button></td>
             <td class="support100"></td>
+            <td class="support100"></td>
+            <td class="support100"></td><td class="support100"></td><td class="support100"></td><td class="support100"></td>
         </tr>
         <tr>
-            <td class="sampleTd"> <a                 class="sample yellow" id="foo7" href="javascript:void(0); return false;">i'm any of the three &lt;a&gt;'s above, WITHOUT tabindex</a></td>
+            <td class="sampleTd"> <a     tabindex="0" class="sample yellow" id="foo4" href="javascript:void(0);">&lt;a tabindex="0" href="javascript:void(0);"&gt;</a></td>
+            <td class="support90" colspan="2"><code>onbeforeunload</code> issues <a tabindex="-1" href="#note6">[6]</a></td>
+            <td class="support90" colspan="2">opens blank new page on mouse middle click <a tabindex="-1" href="#note1">[1]</a></td>
+            <td class="support100"></td>
+            <td class="support0" rowspan="3">not focusable via <nobr><kbd>TAB</kbd>bing</nobr><br/>by default! <a tabindex="-1" href="#note4">[4]</a></td>
+        </tr>
+        <tr>
+            <td class="sampleTd"><a      tabindex="0" class="sample orange" id="foo3" href="#">&lt;a tabindex="0" href="#"&gt;</a>	</td>
+            <td class="support50" colspan="5">resets the current URL hash <a tabindex="-1" href="#note2">[2]</a>;<br/> opens a copy of the page on middle click <a tabindex="-1" href="#note7">[7]</a></td>
+        </tr>
+        <tr>
+            <td class="sampleTd"> <a                 class="sample yellow" id="foo7" href="javascript:void(0); return false;">&lt;a&gt;</a>any of above WITHOUT tabindex</td>
             <td class="skipped" colspan="3"></td>
-            <td class="support90">not focusable via <kbd>TAB</kbd>*****</td>
+            <td class="support90">not focusable via <kbd>TAB</kbd> <a tabindex="-1" href="#note5">[5]</a></td>
             <td class="skipped"> </td>
         </tr>
         <tr>
-            <td class="sampleTd"><input  tabindex="0" class="sample ok" id="foo5" type="button"  value="i'm a &lt;input-button&gt;"></td>
+          <td class="sampleTd"><a      tabindex="0" class="sample ko" id="foo2">&lt;a&gt;</a>WITHOUT href.	</td>
+            <td class="support80">focus can be lost after <a tabindex="-1" href="#note3">[3]</a></td>
+            <td class="support0">not fired</td>
+            <td class="support0">not fired</td>
             <td class="support100"></td>
-            <td class="support100"></td>
-            <td class="support100"></td><td class="support100"></td><td class="support100"></td><td class="support100"></td>
+            <td class="support0">not fired</td>
+            <td class="support0">not fired</td>
         </tr>
         <tr>
-            <td class="sampleTd"><button tabindex="0" class="sample ok" id="foo6" >i'm a &lt;button&gt;</button></td>
+            <td class="sampleTd"><span   tabindex="0" class="sample ko" id="foo1">&lt;span&gt; / &lt;div&gt; / &lt;p&gt;</span></td>
+            <td class="support80">focus can be lost after <a tabindex="-1" href="#note3">[3]</a></td>
+            <td class="support0">not fired</td>
+            <td class="support0">not fired</td>
             <td class="support100"></td>
-            <td class="support100"></td>
-            <td class="support100"></td><td class="support100"></td><td class="support100"></td><td class="support100"></td>
+            <td class="support0">not fired</td>
+            <td class="support0">not fired</td>
         </tr>
     </tbody>
     <tfoot><tr><td colspan="7">
-       * Neither <code>e.preventDefault()</code> nor <code>return false</code>
+    <div class="note">
+       <a id="note1">[1]</a> Neither <code>e.preventDefault()</code> nor <code>return false</code>
        (inside <code>onclick</code>, <code>onmousedown</code>, <code>onmouseup</code>) change anything;<br/>
        the only way I've found to disable the native event of opening a link
-       in the new tab is to bind function invoking <code>alert()</code>
-       to <code>onmousedown</code> (but this works only in Firefox, and
-       is far from being user-friendly, so it should not be used). However,
-       since the newly opened page is blank, it's not a really big deal.<br/><br/>
+       in the new tab is to have some event listener attached
+       to <code>onmousedown</code> invoke <code>alert()</code> (but 1] this works only in Firefox, and
+       2] is far from being user-friendly, so it should not be used).<br><br>
 
-       ** Resetting the hash has also a side-effect of scrolling to the top. To prevent this,
+       However, since the newly opened page is blank, it's not a really big deal.<br/><br/>
+    </div>
+
+    <div class="note">
+       <a id="note2">[2]</a> Resetting the hash has also a side-effect of scrolling to the top. To prevent this,
        one can use <code>#nonExistingAnchor</code> in a link instead of just <code>#</code>,
        and then no scrolling would take place. A sensible convention can be to use
        <code>#void</code> as this anchor (and of course do not create
@@ -172,7 +169,7 @@
 <pre class="source-code">
 &lt;a href="#void" onclick="alert('hi');"&gt;click me&lt;/a&gt;
 &lt;script&gt;
-   window.onhashchange = function(e){
+window.onhashchange = function(e){
    var newUrl = e.newURL, newUrlLen = newUrl.length;
    if(newUrl.substring(newUrlLen-5,newUrlLen)=="#void"){
       history.replaceState(null,null,e.oldURL);
@@ -180,23 +177,33 @@
 }
 &lt;/script&gt;
 </pre>
+    </div>
 
-       *** Clicking <kbd>ENTER</kbd> when focus is on any non-form and
-       non-link HTML element (like DIV, SPAN etc.) -- even if that element
+    <div class="note">
+       <a id="note3">[3]</a> Clicking <kbd>ENTER</kbd> when focus is on any non-form and
+       non-link HTML element (like <code>div</code>, <code>span</code> etc.) -- even if that element
        doesn't have any event listeners attached -- astonishingly moves
        the focus to the closest <code>&lt;button&gt;</code> in the markup (!).
-       Not the case if clicking the element by mouse.<br/><br/>
+       Not the case if clicking the element by mouse. Likely an IE8 bug.<br/><br/>
+    </div>
 
-       **** User can opt in via <em>Preferences > Advanced > "Press
+    <div class="note">
+       <a id="note4">[4]</a> User can opt in via <em>Preferences > Advanced > "Press
        Tab to highlight each item on a webpage"</em>.
        The default behavior is ridiculous, but power users who want keyboard accessibility
        certainly will have the option enabled.<br/><br/>
+    </div>
 
-       ***** <kbd>TAB</kbd>-navigation in Opera
-       is separated from navigation over the links. <kbd>TAB</kbd>-navigation cycles <strong>only over
+    <div class="note">
+       <a id="note5">[5]</a> <kbd>TAB</kbd>-navigation in Opera
+       is separated from navigation over the links.<br><br>
+
+       <kbd>TAB</kbd>-navigation cycles <strong>only over
        the elements that have explicitly set <code>tabindex</code></strong> e.g. to 0 (and by default,
        over the form elements). It doesn't cycle
-       over the links that do not have <code>tabindex</code>. To cycle over the links, there are separate
+       over the links that do not have <code>tabindex</code>.<br><br>
+
+       To cycle over the links, there are separate
        keyboard shortcuts <kbd>CTRL</kbd>-<kbd>UP</kbd> and <kbd>CTRL</kbd>-<kbd>DOWN</kbd>. The good side
        is that the two cooperate together -- can be used alternately; i.e. using <kbd>(SHIFT+)TAB</kbd> or
        <kbd>CTRL</kbd>-<kbd>UP/DOWN</kbd> moves the focus to the closest element of the currently focused one.
@@ -206,16 +213,39 @@
        <strong>By the way, remember not to override this shortcut (<kbd>CTRL</kbd>-<kbd>UP/DOWN</kbd>)
        if you're going to enable rich keyboard shortcuts in your application</strong>, as you can do more harm
        than good to the users of Opera who are accustomed to this browser shortcuts.
+    </div>
+
+
+    <div class="note">
+       <a id="note6">[6]</a>
+
+        If:
+            <ul>
+            <li>you have defined <code>window.onbeforeunload</code></li>
+            <li>and your event listener does NOT <code>return false</code></li>
+            </ul>
+        Then: Asks "Are you sure you want to navigate away from this page?"
+        -- both from keyboard/mouse click.<br><br>
+
+        Since you're using <code>onbeforeunload</code> you probably need to do that, so take a look
+        at your listeners and add <code>return false</code> at the end of the handlers.
+    </div>
+
+    <div class="note">
+       <a id="note7">[7]</a>
+        In Chrome, opens a new tab only when current URL's hash is different than link href's hash.
+    </div>
+
 
     </td></tr></tfoot>
     </table>
 
-    <h1>Corollaries</h1>
+<h1 id="corollaries">Corollaries</h1>
 
     <p>To provide keyboard-navigability of your control on the page:</p>
     <ul>
         <li>Do not attach <code>onclick</code> event listeners to <code>div</code>s, <code>span</code>s etc. </li>
-        <li>If you attach <code>onclick</code> event listeners to <code>a</code>, remember to set also <code>href</code>.
+        <li>If you attach <code>onclick</code> event listeners to <code>a</code>, <u>remember to set also <code>href</code></u>.
             Otherwise, the event couldn't be fired from the keyboard.
         <li>Ideally, you should use <code>input</code>s / <code>button</code>s, however this comes with the styling issues and the inherent
             &quot;pushability&quot; of them. The added value on the other hand is that buttons can be activated with <kbd>SPACE</kbd>, not only <kbd>ENTER</kbd>.</li>
@@ -228,6 +258,7 @@
             which state that input, buttons and anchors have to be used to provide keyboard accessibility,
             should be followed.</li>
     </ul>
+</div>
 
     <script type="text/javascript">
 
@@ -270,6 +301,17 @@
                 if (e) {e.returnValue = msg;}
                 return msg;
             };
+
+            var h1s = document.querySelectorAll('h1[id], a[id]');
+            for(var i=0; i<h1s.length; ++i){
+                var el = h1s[i];
+                el.style.cursor = 'pointer';
+                el.onclick = (function(id) {
+                    return function (){
+                        document.location.href = '#' + id;
+                    }
+                })(el.id);
+            }
         }
 
         init();

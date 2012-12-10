@@ -1,0 +1,109 @@
+body{background-color:#f0f0f0; font-family:sans-serif; font-size:10pt;}
+table, td {border-radius:8px;}
+code {color:#00f; font-weight:bold;}
+kbd {
+    padding:1px 5px;
+    background:#ddd;
+    color:#000;
+    display: inline-block;
+    border-left:1px solid #aaa;
+    border-top:1px solid #aaa;
+    border-bottom:1px solid black;
+    border-right:1px solid black;
+}
+pre.source-code {border:1px solid black; background-color:linen; padding:4px; border-radius:5px;}
+li {line-height:150%;}
+
+.support0 {background-color:red; color:white;}
+.support50 {background-color:orange;}
+.support80 {background-color:#f2ff00;}
+.support90 {background-color:#ab0;}
+.support100 {background-color:green; color:white;}
+
+.support0,
+.support50,
+.support80,
+.support90,
+.support100 {
+    border: 1px solid #666;
+}
+
+table.matrix {table-layout:fixed; border:2px solid black;}
+table.matrix td{width:12%; text-align:center; padding:15px;}
+table.matrix tfoot td{border-top:2px solid black; text-align:left;}
+table.matrix thead td{background-color:black; color:white; font-weight:bold;}
+table.matrix tbody td{font-weight:normal;}
+
+.sample {
+display:block;
+width:100%;
+padding:2px 0;
+border:1px solid #666;
+background-color: #ddd;
+font-family:"Lucida Console", monospace;
+text-decoration:none;
+cursor:pointer;
+color:black !important;
+}
+.sample:focus,
+.focused
+    {border:1px solid blue; background-color:#fff;} /*outline poorly supported*/
+
+#main {
+max-width: 950px; margin:0 auto;
+}
+
+.sampleSample {
+display: inline-block;
+width:100px;
+font-weight:bold;
+border-radius:5px;
+text-align:center;
+border:1px solid #666;
+}
+.sampleSample.red { background-color:red; color:white; }
+.sampleSample.green { background-color:green; color:white; }
+.sampleSample.other { background-color:yellow; }
+
+.codeContainer {
+    display: block;
+    background-color: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 14pt;
+    padding: 20px;
+    text-align: center;
+    margin:10px 0;
+}
+
+.bigmargin {
+margin: 80px 0 ;
+}
+
+h2.q {
+color: red;
+text-align:center;
+}
+
+a:not([href]){
+font-weight: bold;
+}
+
+div.note {
+background-color:white;
+margin: 10px 0;
+border-radius: 5px;
+padding:5px;
+border:1px solid #999;
+}
+
+.startinput {
+ text-align: center;
+ width: 500px;
+ display:block;
+ margin: 50px auto;
+}
+
+#main {
+margin-bottom:800px;
+}
