@@ -1,5 +1,5 @@
 body{background-color:#f0f0f0; font-family:sans-serif; font-size:10pt;}
-table, td {border-radius:8px;}
+table {border-radius:8px;}
 code {color:#00f; font-weight:bold;}
 kbd {
     padding:1px 5px;
@@ -85,7 +85,7 @@ color: red;
 text-align:center;
 }
 
-a:not([href]){
+a[id^=note]{
 font-weight: bold;
 }
 

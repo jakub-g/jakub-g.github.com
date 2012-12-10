@@ -92,7 +92,7 @@
             <td>IE7/IE9/IE10</td>
             <td>Firefox3.6...Fx18</td>
             <td>Opera 11.6...12.0</td>
-            <td>Chrome18...22</td>
+            <td>Chrome18...25</td>
             <td>Safari 5.1.7</td>
         </tr>
     </thead>
@@ -121,7 +121,7 @@
             <td class="support50" colspan="5">resets the current URL hash <a tabindex="-1" href="#note2">[2]</a>;<br/> opens a copy of the page on middle click <a tabindex="-1" href="#note7">[7]</a></td>
         </tr>
         <tr>
-            <td class="sampleTd"> <a                 class="sample yellow" id="foo7" href="javascript:void(0); return false;">&lt;a&gt;</a>any of above WITHOUT tabindex</td>
+            <td class="sampleTd"> <a                 class="sample yellow" id="foo7" href="javascript:void(0);">&lt;a&gt;</a>any of above WITHOUT tabindex</td>
             <td class="skipped" colspan="3"></td>
             <td class="support90">not focusable via <kbd>TAB</kbd> <a tabindex="-1" href="#note5">[5]</a></td>
             <td class="skipped"> </td>
@@ -302,7 +302,7 @@ window.onhashchange = function(e){
                 return msg;
             };
 
-            var h1s = document.querySelectorAll('h1[id], a[id]');
+            var h1s = document.querySelectorAll('h1[id], a[id^=note]');
             for(var i=0; i<h1s.length; ++i){
                 var el = h1s[i];
                 el.style.cursor = 'pointer';
