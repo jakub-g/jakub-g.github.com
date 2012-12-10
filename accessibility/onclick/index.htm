@@ -9,8 +9,17 @@
 
 <body>
 <div id="main">
+    <div class="homeLink">
+        <a href="/">home</a>
+    </div>
 
     <h1>Is your rich JavaScript app keyboard-friendly?</h1>
+
+    <div class="versHist">
+    initial version 19.10.2012<br>
+    reworded & improved 10.12.2012
+    </div>
+
     <h3>Keyboard support for <code>onclick</code> statements on HTML tags<br/>
     <small>Accessibility demo test case & compatibility table</small></h3>
 
@@ -66,12 +75,12 @@
 
     <p>All of the HTML tags below in the leftmost column have:
         <ul>
-        <li><code>tabindex="0"</code> to make them <kbd>TAB</kbd>-navigable from keyboard</li>
+        <li><code>tabindex="0"</code> to make them <kbd>Tab</kbd>-navigable from keyboard</li>
         <li><code>onclick : "alert('hi')"</code> (added via <code>addEventListener</code>/<code>attachEvent</code>)</li>
         </ul>
     </p>
 
-    <h3>TAB-navigate through the items. Click <kbd>ENTER</kbd> when each of
+    <h3><kbd>Tab</kbd>-navigate through the items. Click <kbd>Enter</kbd> when each of
         the items has focus, to check whether <code>onclick</code>
         will be fired when you activate the item from <u>keyboard</u>.</h3>
 
@@ -284,11 +293,12 @@ window.onhashchange = function(e){
                 if(elm){
                     if(document.addEventListener){
                         document.getElementById('foo'+i).addEventListener('click',handler,false);
-                        //document.getElementById('foo'+i).addEventListener('mousedown',mousedown,false);
+                        //document.getElementById('foo'+i).addEventListener('mouseup',handler,false);
                     }else if(document.attachEvent){
                         document.getElementById('foo'+i).attachEvent('onfocus',onfocusIE);
                         document.getElementById('foo'+i).attachEvent('onblur',onblurIE);
                         document.getElementById('foo'+i).attachEvent('onclick',handler);
+                        //document.getElementById('foo'+i).attachEvent('onmouseup',handler);
                     }
                 }
             }
@@ -306,6 +316,7 @@ window.onhashchange = function(e){
             for(var i=0; i<h1s.length; ++i){
                 var el = h1s[i];
                 el.style.cursor = 'pointer';
+                el.className = 'underOnHover';
                 el.onclick = (function(id) {
                     return function (){
                         document.location.href = '#' + id;

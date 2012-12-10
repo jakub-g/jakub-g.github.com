@@ -105,5 +105,20 @@ border:1px solid #999;
 }
 
 #main {
-margin-bottom:800px;
+margin-bottom:400px;
+}
+
+.versHist {
+float:right; text-align:right; width: 300px;
+}
+
+div.homeLink {
+position:absolute; top:0; right:20px; background-color:#760454;
+border-radius:5px; padding:10px;
+}
+div.homeLink a {
+color:white; font-weight:bold;
+}
+.underOnHover:hover {
+text-decoration: underline;
 }

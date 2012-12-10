@@ -2,8 +2,12 @@ var _gaq = [];
 _gaq.push(['_setAccount', 'UA-36609750-1']);
 _gaq.push(['_trackPageview']);
 
-(function() {
+var sc_project=8533946, sc_invisible=1, sc_security="c702a775";
+
+var add=function(url) {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ga.src = url;
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+};
+add('http://www.google-analytics.com/ga.js');
+add('http://www.statcounter.com/counter/counter.js');
