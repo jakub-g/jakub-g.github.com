@@ -88,6 +88,16 @@ alias forkto='git checkout -b'
 # Master is checked out so frequently it deserves its own command.
 alias gmaster='git checkout master'
 
+# TAB-autocompletion for goto. Probably highly suboptimal, but works
+_gitbranches()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    opts=`git branch -l | cut -c 3- | tr -s '[:space:]' '[ *]'`
+    COMPREPLY=( $(compgen -W "${opts}" -- $cur) )
+}
+complete -F _gitbranches goto
+complete -F _gitbranches gck
+
 # ======================================================
 # updating - from upstream
 # ======================================================
