@@ -149,6 +149,12 @@ alias gamend='git commit --amend'
 # Amend the commit, squashing all local changes into it.
 alias gamendall='gaaa && gamend'
 
+# Cherry-pick
+alias gcp='git cherry-pick'
+
+# Cherry-pick / back-port the bugfix: append a line that says "(cherry picked from commit ...)"
+alias gcpbp='git cherry-pick -x'
+
 # ======================================================
 # executing pre-commit hook
 # ======================================================
