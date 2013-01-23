@@ -10,28 +10,47 @@ alias attester='npm run-script attester'
 # Launch attester passing one specific test classpath.
 # Usage:
 #  attest test.aria.widgets.form.autocomplete.issue315.OpenDropDownFromButtonTest
+#  attest test/aria/widgets/form/autocomplete/issue315/OpenDropDownFromButtonTest
+#  attest test/aria/widgets/form/autocomplete/issue315/OpenDropDownFromButtonTest.js
+# @param $1 classpath
 attest() {
-    classpath=$(echo $* | sed -e 's/\//\./g') # / to . replacements allows for folder-based TAB-autocompletion to work!
+    classpath=$(_filenameToClassPath $1)
     node node_modules/attester/bin/attester.js --phantomjs-instances 1 --config.resources./ src --config.resources./test test --config.tests.aria-templates.classpaths.includes ${classpath}
 }
 
 fxtest() {
-    classpath=$(echo $* | sed -e 's/\//\./g') # / to . replacements allows for folder-based TAB-autocompletion to work!
-    firefox "http://localhost/aria-templates/test/beta.html?dev=true&testClasspath=${classpath}" &
+    classpath=$(_filenameToClassPath $1)
+    url=$(_testUrlFromClasspath $classpath)
+    firefox $url &
 }
 ietest() {
-    classpath=$(echo $* | sed -e 's/\//\./g') # / to . replacements allows for folder-based TAB-autocompletion to work!
-    ie "http://localhost/aria-templates/test/beta.html?dev=true&testClasspath=${classpath}" &
+    classpath=$(_filenameToClassPath $1)
+    url=$(_testUrlFromClasspath $classpath)
+    ie $url &
 }
 chtest() { # you'll need to add (at least on Windows) the folder of chrome executable to the system's PATH
-    classpath=$(echo $* | sed -e 's/\//\./g') # / to . replacements allows for folder-based TAB-autocompletion to work!
-    chrome "http://localhost/aria-templates/test/beta.html?dev=true&testClasspath=${classpath}" &
+    classpath=$(_filenameToClassPath $1)
+    url=$(_testUrlFromClasspath $classpath)
+    chrome $url &
 }
 
 multest() {
-    classpath=$(echo $* | sed -e 's/\//\./g') # / to . replacements allows for folder-based TAB-autocompletion to work!
+    classpath=$(_filenameToClassPath $1)
     ietest ${classpath} &
     fxtest ${classpath} &
     chtest ${classpath} &
     attest ${classpath}
+}
+
+# =============== helpers ===============
+
+# @param $1 filename
+_filenameToClassPath() {
+    # / to . replacements allows for folder-based TAB-autocompletion to work
+    echo $1 | sed -e 's/\//\./g' | sed -e 's/.js$//g'
+}
+
+# @param $1 classpath
+_testUrlFromClasspath() {
+    echo "http://localhost/aria-templates/test/beta.html?dev=true&testClasspath=$1"
 }
