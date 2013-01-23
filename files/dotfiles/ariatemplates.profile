@@ -14,32 +14,52 @@ alias attester='npm run-script attester'
 #  attest test/aria/widgets/form/autocomplete/issue315/OpenDropDownFromButtonTest.js
 # @param $1 classpath
 attest() {
-    classpath=$(_filenameToClassPath $1)
-    node node_modules/attester/bin/attester.js --phantomjs-instances 1 --config.resources./ src --config.resources./test test --config.tests.aria-templates.classpaths.includes ${classpath}
+    if [ $# -eq 1 ] ; then
+        classpath=$(_filenameToClassPath $1)
+        node node_modules/attester/bin/attester.js --phantomjs-instances 1 --config.resources./ src --config.resources./test test --config.tests.aria-templates.classpaths.includes ${classpath}
+    else
+        echo "Please provide a classpath."
+    fi
 }
 
 fxtest() {
-    classpath=$(_filenameToClassPath $1)
-    url=$(_testUrlFromClasspath $classpath)
-    firefox $url &
+    if [ $# -eq 1 ] ; then
+        classpath=$(_filenameToClassPath $1)
+        url=$(_testUrlFromClasspath $classpath)
+        firefox $url &
+    else
+        echo "Please provide a classpath."
+    fi
 }
 ietest() {
-    classpath=$(_filenameToClassPath $1)
-    url=$(_testUrlFromClasspath $classpath)
-    ie $url &
+    if [ $# -eq 1 ] ; then
+        classpath=$(_filenameToClassPath $1)
+        url=$(_testUrlFromClasspath $classpath)
+        ie $url &
+    else
+        echo "Please provide a classpath."
+    fi
 }
 chtest() { # you'll need to add (at least on Windows) the folder of chrome executable to the system's PATH
-    classpath=$(_filenameToClassPath $1)
-    url=$(_testUrlFromClasspath $classpath)
-    chrome $url &
+    if [ $# -eq 1 ] ; then
+        classpath=$(_filenameToClassPath $1)
+        url=$(_testUrlFromClasspath $classpath)
+        chrome $url &
+    else
+        echo "Please provide a classpath."
+    fi
 }
 
 multest() {
-    classpath=$(_filenameToClassPath $1)
-    ietest ${classpath} &
-    fxtest ${classpath} &
-    chtest ${classpath} &
-    attest ${classpath}
+    if [ $# -eq 1 ] ; then
+        classpath=$(_filenameToClassPath $1)
+        ietest ${classpath} &
+        fxtest ${classpath} &
+        chtest ${classpath} &
+        attest ${classpath}
+    else
+        echo "Please provide a classpath."
+    fi
 }
 
 # =============== helpers ===============
