@@ -63,9 +63,14 @@ alias glog3="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 # branches - displaying
 # ======================================================
 
-# Display local branches
-alias gb='git branch'
-alias gbr='gb'
+# Display recent local branches and last commit date (sorted by last commit date)
+alias gb='git for-each-ref --sort=-committerdate --format="%(committerdate:short) %(refname:short)" refs/heads/'
+
+# Display recent local branches - short (only names) (sorted by last commit date)
+alias gbs='git for-each-ref --sort=-committerdate --format="%(refname:short)" refs/heads/'
+
+# Display local branches (default sorting by name)
+alias gbr='git branch'
 
 # Display local and remote branches
 alias gbra='git branch -a'
@@ -81,9 +86,15 @@ alias gck='git checkout'
 #  goto iss234
 alias goto='git checkout'
 
+# Create a new branch out of current branch.
 # Usage:
 #  forkto iss234
 alias forkto='git checkout -b'
+
+# Rename current branch.
+# Usage:
+#  moveto iss234
+alias moveto='git branch -m'
 
 # Master is checked out so frequently it deserves its own command.
 alias gmaster='git checkout master'
@@ -146,14 +157,17 @@ alias gcam='git commit -a -m'
 # Amend the last commit - e.g. fix the message.
 alias gamend='git commit --amend'
 
-# Amend the commit, squashing all local changes into it.
+# Amend the last commit, squashing all local changes into it.
 alias gamendall='gaaa && gamend'
+
+# Amend the last commit: set date to current date
+alias gamenddate='git commit --amend --date="$(date -R)"'
 
 # Cherry-pick
 alias gcp='git cherry-pick'
 
 # Cherry-pick / back-port the bugfix: append a line that says "(cherry picked from commit ...)"
-alias gcpbp='git cherry-pick -x'
+alias gcpx='git cherry-pick -x'
 
 # ======================================================
 # executing pre-commit hook
@@ -177,6 +191,9 @@ alias gri='git rebase -i'
 
 # Push to origin.
 alias gpo='git push origin'
+
+# Push --force (to a tracking branch).
+alias gpf='git push -f'
 
 # Push to origin -- special command to avoid pushing to upstream by confusing upstream and origin accidentally.
 alias gpushfork='gpo'
@@ -203,3 +220,21 @@ alias gbistart='git bisect start'
 alias gbigood='git bisect good'
 alias gbibad='git bisect bad'
 alias gbiend='git bisect reset'
+
+# ======================================================
+# traversing history
+# ======================================================
+
+# Go back in Git commit hierarchy
+# Usage:
+#  goback
+alias goback='git checkout HEAD~'
+
+# Go forward in Git commit hierarchy, towards particular commit.
+# Note: not tested on merges (assumes linear history).
+# Usage:
+#  gofwd v1.2.7
+# Does nothing when the parameter is not specified.
+gofwd() {
+  git checkout `git rev-list --topo-order HEAD.."$*" | tail -1`
+}

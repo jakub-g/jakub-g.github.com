@@ -8,7 +8,8 @@
 #
 ####################################
 
-source ./unix.profile
-source ./unix-mingw.profile
-source ./win-mingw.profile
-source ./git.profile
+source ~/unix.profile
+source ~/unix-mingw.profile
+source ~/win-mingw.profile
+source ~/git.profile
+source ~/ariatemplates.profile
