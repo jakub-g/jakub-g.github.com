@@ -1,6 +1,18 @@
 #!/bin/bash
 
 # ======================================================
+# autocompletion helpers
+# ======================================================
+
+# TAB-autocompletion for branch-based commands. Probably highly suboptimal, but works
+_gitbranches()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    opts=`git branch -l | cut -c 3- | tr -s '[:space:]' '[ *]'`
+    COMPREPLY=( $(compgen -W "${opts}" -- $cur) )
+}
+
+# ======================================================
 # diff
 # ======================================================
 
@@ -15,9 +27,11 @@ alias gds='git diff --stat'
 
 # Display code diff of the tip in branch/tag/commit. Shows HEAD if parameterless.
 alias gsh='git show'
+complete -F _gitbranches gsh
 
 # Display diff stats of the tip in branch/tag/commit. Shows HEAD if parameterless.
 alias gshs='git show --stat'
+complete -F _gitbranches gshs
 
 # Instead of displaying full line deletions, displays colored inline changes.
 alias gdmin='git diff --color-words'
@@ -99,13 +113,6 @@ alias moveto='git branch -m'
 # Master is checked out so frequently it deserves its own command.
 alias gmaster='git checkout master'
 
-# TAB-autocompletion for goto. Probably highly suboptimal, but works
-_gitbranches()
-{
-    local cur=${COMP_WORDS[COMP_CWORD]}
-    opts=`git branch -l | cut -c 3- | tr -s '[:space:]' '[ *]'`
-    COMPREPLY=( $(compgen -W "${opts}" -- $cur) )
-}
 complete -F _gitbranches goto
 complete -F _gitbranches gck
 
@@ -183,7 +190,20 @@ alias ghka="gcam ''"
 # ======================================================
 # rebasing
 # ======================================================
-alias gri='git rebase -i'
+
+# git rebase.
+#  Usage:
+#   gri HEAD^^^
+#   gri 3
+gri(){ # e.g "gri 4"
+    # hack to check if $1 exists and is a number...
+    if [ -n "$1" ] && [ "$1" -eq "$1" ] 2>/dev/null; then
+        ref="HEAD`printf %$1s |tr " " "^"`"   # output HEAD^^^^ if $1 == 4
+        git rebase -i ${ref}
+    else
+        git rebase -i $1
+    fi
+}
 
 # ======================================================
 # pushing
@@ -211,7 +231,13 @@ alias gpomf='git push -f origin master'
 #  Usage:                          gdelremote foo
 #  To delete local branch:         git branch -d foo
 #  To force delete local branch:   git branch -D foo
+#  To force delete local branch:   gdel foo
 alias gdelremote='git push origin --delete'
+
+# Delete a local branch (force).
+#  Usage:                          gdel foo
+alias gdel='git branch -D'
+complete -F _gitbranches gdel
 
 # ======================================================
 # bisecting
@@ -238,3 +264,4 @@ alias goback='git checkout HEAD~'
 gofwd() {
   git checkout `git rev-list --topo-order HEAD.."$*" | tail -1`
 }
+complete -F _gitbranches gofwd
