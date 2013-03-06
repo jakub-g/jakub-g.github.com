@@ -13,3 +13,9 @@ source ~/unix-mingw.profile
 source ~/win-mingw.profile
 source ~/git.profile
 source ~/ariatemplates.profile
+
+# pull dot profile files from ~ to cwd
+alias pulldot='cp ~/*.profile .'
+
+# push dot profile files from cwd to ~
+alias pushdot='cp ./*.profile ~'

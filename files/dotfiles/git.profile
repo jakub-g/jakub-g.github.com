@@ -120,7 +120,7 @@ complete -F _gitbranches gck
 # updating - from upstream
 # ======================================================
 
-alias gup='git pull --rebase upstream master'  # if merge conflicts are predicted, better pull without rebase
+alias gup='git fetch upstream && git rebase upstream/master master'
 alias gupf='git stash && gup && git stash pop'
 alias guptag='git fetch --tags upstream'       # tags are not downloaded by default
 
@@ -208,6 +208,9 @@ gri(){ # e.g "gri 4"
 # ======================================================
 # pushing
 # ======================================================
+
+# Push (meant to be used with simple push semantics e.g. to push to a tracking branch)
+alias gp='git push'
 
 # Push to origin.
 alias gpo='git push origin'

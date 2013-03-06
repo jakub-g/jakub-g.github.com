@@ -9,7 +9,7 @@
 
 # reload shortcuts without quitting bash
 alias aliasload='source ~/.profile'
-alias reload='aliasload'
+alias    reload='source ~/.profile'
 
 ## those shortcuts can be useful if you have only 1 file
 ##
