@@ -143,12 +143,16 @@ h2.hello {
 
 img.bordered {
     border: 1px solid black;
+    padding:2px;
+    border-radius: 4px;
 }
 
 .bigbig { font-size: 30pt; margin: 0; }
 .big    { font-size: 22pt; margin: 0; }
 a.illustrationLinkSD  > img { float:left; padding:5px; }
 a.illustrationLinkGHA > img { float:right; margin:5px; }
+a.illustrationLinkFIDD > img { float:right; margin:5px; }
+
 @media (max-width: 700px) {
     .entryBlock { width: 95%; }
     .bigbig { font-size: 22pt; margin: 0; }
