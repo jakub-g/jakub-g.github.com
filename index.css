@@ -77,11 +77,20 @@ a:active::-moz-selection {
      border-radius: 10px;
     background-color: #f0f0f0;
    }
+       @media (max-width: 700px) {
+        .entryBlock {
+            width: 95%;
+        }
+       }
       .entryBlockInner {
         padding: 1px 13px;
       }
-   #about {
+   .entryBlockDouble {
     width: 95%;
+   }
+
+
+   #about {
     background-color: #333;
     color: #fff;
    }
@@ -112,6 +121,7 @@ ul.linkroll {
     clear: both;
     background-color: #666;
     width: 480px;
+    max-width: 100%;
     padding-left: 10px;
     border-radius: 5px;
 }
@@ -127,4 +137,8 @@ h2.hello {
     display: inline-block;
     clear: both;
     margin-bottom:0;
+}
+
+img.bordered {
+    border: 1px solid black;
 }
