@@ -79,7 +79,7 @@ a:active::-moz-selection {
    }
        @media (max-width: 700px) {
         .entryBlock {
-            width: 95%;
+            width: 95%; 
         }
        }
       .entryBlockInner {
