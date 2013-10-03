@@ -1,9 +1,9 @@
 body{
     background-color:#cfcfcf;
     font-family:sans-serif;
-    font-size:10pt;
     padding:0;
     margin:0;
+    font-size:100%;
 }
 table, td {
     border-radius:8px;
@@ -22,6 +22,11 @@ kbd {
 li {
     line-height:150%;
 }
+h1 { font-size: 2em; }
+h2 { font-size: 1.7em; }
+h3 { font-size: 1.1em; }
+p, li, code { font-size: 0.8em; }
+img { border: 0; }
 
 a:link {
    color:blue;
@@ -106,10 +111,7 @@ a:active::-moz-selection {
     color: #f00;
    }
 #bottomBar {
-    position:fixed;
-    bottom: 0px;
     background-color: #333;
-    width:100%;
     padding:10px;
     color: #fff;
 }
@@ -117,25 +119,25 @@ a:active::-moz-selection {
     color:#fdd;
 }
 
-ul.linkroll {
+.linkroll {
     float: right;
     display: block;
     clear: both;
     background-color: #666;
     width: 430px;
-    max-width: 100%;
+    max-width: 95%;
     padding-left: 10px;
     border-radius: 5px;
 }
-ul.linkroll > li {
+.linkroll > li {
     display: list-item;
     float: left;
     margin-left: 20px;
 }
-ul.linkroll a {
+.linkroll a {
     color: #ccc !important;
 }
-h2.hello {
+.hello {
     display: inline-block;
     clear: both;
     margin-bottom:0;
@@ -154,8 +156,13 @@ a.illustrationLinkGHA > img { float:right; margin:5px; }
 a.illustrationLinkFIDD > img { float:right; margin:5px; }
 
 @media (max-width: 700px) {
+    h3 { font-size: 1.3em; }
+    p, li, code { font-size:1.2em; }
+    li { line-height:180%; }
     .entryBlock { width: 95%; }
     .bigbig { font-size: 22pt; margin: 0; }
     .big    { font-size: 18pt; margin: 0; }
     a.illustrationLinkSD > img { float:none; display:block; margin-left:auto; margin-right:auto; }
+    .hello { display: none; }
+    .hello2 { clear:both; }
 }
