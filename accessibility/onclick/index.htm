@@ -17,7 +17,8 @@
 
     <div class="versHist">
     initial version 19.10.2012<br>
-    reworded & improved 10.12.2012
+    reworded & improved 10.12.2012<br>
+    CSP notes 07.05.2014
     </div>
 
     <h3>Keyboard support for <code>onclick</code> statements on HTML tags<br/>
@@ -249,6 +250,18 @@ window.onhashchange = function(e){
     </td></tr></tfoot>
     </table>
 
+<h1 id="csp">Edit (05.2014): Content Security Policy issues (CSP)</h1>
+
+    <p>One of the drawbacks of the <code>javascript:void(0)</code> attitude in the context of modern web
+    development is that it's incompatible with Content Security Policy, which when enabled in the response
+    headers of your HTML files tells the browser to disallow inline scripts (as a means to improve websites
+    security, particularly to mitigate XSS risk).
+    </p>
+
+    <p>When following <code>javascript:void(0)</code> advice with CSP enabled, you may see lots of warnings
+    in your browser's console. If you don't want that warnings, you may instead follow advice in
+    <a href="#note2">note 2 of this article</a>.</p>
+
 <h1 id="corollaries">Corollaries</h1>
 
     <p>To provide keyboard-navigability of your control on the page:</p>
@@ -261,12 +274,21 @@ window.onhashchange = function(e){
         <li>The most sensible tradeoff is to use <code>&lt;a href='javascript:void(0);'&gt;</code> and use <code>return false</code> in the
             listeners. Then the only problem is opening new page on mouse middle click (which can be mitigated if really
             needed via some additional JavaScript).</li>
-         <li><strong>Opera stands out positively</strong>, and handles <code>onclick</code> from keyboard on almost all the HTML
+         <li><strong>Opera 12 stands out positively</strong>, and handles <code>onclick</code> from keyboard on almost all the HTML
             tags on which it makes sense. It would be much easier if other vendors implemented that behavior,
             but since it's not the case, the <a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/SCR35">WCAG recommendations</a>,
             which state that input, buttons and anchors have to be used to provide keyboard accessibility,
             should be followed.</li>
     </ul>
+
+<h1 id="further">Further discussion</h1>
+
+    <ul>
+        <li><a href="http://stackoverflow.com/q/134845/245966">
+            Stackoverflow: Href attribute for JavaScript links: “#” or “javascript:void(0)”?</a></li>
+    </ul>
+
+<h1 id="comments">Share your thoughts</h1>
 
     <div id="disqus_thread"></div>
 </div>
