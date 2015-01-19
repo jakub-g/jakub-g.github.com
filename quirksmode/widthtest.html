@@ -17,6 +17,7 @@
 <div id="writeroot"></div>
 
 <button id="testButton">Refresh tests</button>
+<button id="removeLipsumButton">Remove lorem ipsum and refresh</button>
 <button id="stretch">Stretch writeroot</button>
 
 <div id="measurement">
@@ -32,8 +33,47 @@
 	<li><a href="widthtest_vpdevice.html">With viewport width set to device width</a></li>
 </ul>
 
-<p>Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
-Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. </p>
+
+<h2>Mobile notes</h2>
+
+<ul>
+    <li><strong>
+      TL;DR stuff will change after resizes, orientation changes, scrolls, zooms initiated
+      by the user.<br>
+      Bind the listeners to <code>window.onresize</code> and <code>document.onscroll</code>
+      if you depend on width/height values tested on this page.
+    </strong></li>
+    <li>On mobile, <code>window.innerWidth/Height</code> change when the user zooms.
+      Chrome(Android) and Safari only emit <code>scroll</code> event in that case,
+      while IE11 emits <code>scroll</code> and <code>resize</code>.</li>
+    </li>
+    <li>In IE11, it may happen that <code>window.innerWidth/Height</code> will not report
+      proper values upon page load the first time you open the page, but will report good one after
+      you refresh the page. The solution is to listen to window's <code>resize</code> event,
+      which will be triggered shortly after <code>load</code> in this scenario.
+    </li>
+    <li><strong>On mobile, viewport size may change when the user scrolls the page</strong> (Safari shrinks
+      the URL bar, Chrome hides it completely).
+      TL;DR: It's best to observe <code>window.innerWidth/Height</code> for that:<br>
+
+      <code>documentElement.clientWidth/Height</code> and <code>window.innerWidth/Height</code>
+      are initially equivalent (i.e. when user didn't zoom), with possible 1px height discrepancy on Android/WP).<br>
+      The latter pair changes when the user zooms, the former does not.<br>
+      <code>window.innerHeight</code> also changes when the URL bar is shrinked / hidden after scroll.
+      In Chrome, also <code>documentElement.clientHeight</code> changes, while it does not in Safari.<br>
+    </li>
+</ul>
+
+<h2>Desktop notes</h2>
+
+<ul>
+    <li>
+        <code>documentElement.clientWidth/Height</code> exclude scrollbars and hence may
+        change at any time when some DOM element is added / removed / resized etc.
+    </li>
+</ul>
+
+<p id="loremipsum"></p>
 
 </body>
 </html>
