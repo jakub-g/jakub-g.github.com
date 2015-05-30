@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="robots" content="noindex">
+  <title>Jakub Gieryluk - software engineer - CV</title>
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style id="dark-theme" media="screen">
+    body {
+      color: #CCC;
+      background-color: #000;
+    }
+    a:link {
+      color: #AAF;
+    }
+    a:visited {
+      color: #66F;
+    }
+    a:hover {
+      color: #FF0;
+    }
+    h2 {
+      color: #F8F800;
+    }
+    .meta {
+      color: #888;
+    }
+    .company {
+      color: #DDC;
+    }
+    .location, .time {
+      color: #999;
+    }
+    ul.tags > li {
+      color: #C6CDD2;
+      background-color: #08385A;
+    }
+    .tags > li.minor {
+      color: #ACBECC;
+      background-color: #093353;
+    }
+  </style>
+  <style id="light-theme">
+    body {
+      color: #000;
+      background-color: #FCFCFC;
+    }
+    a:link {
+      color: blue;
+    }
+    a:visited {
+      color: navy;
+    }
+    a:hover {
+      color: red;
+    }
+    h2 {
+      color: #000;
+    }
+    .meta {
+      color: #888;
+    }
+    .company {
+      color: navy;
+    }
+    .location, .time {
+      color: #666;
+    }
+    ul.tags > li {
+      color: #365F7C;
+      background-color: #E4EDF4;
+    }
+    .tags > li.minor {
+      color: #85A1B6;
+      background-color: #F0F5F9;
+    }
+  </style>
+  <style id="shared" media="screen">
+
+    @media (max-width: 600px) {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    body {
+      font-family: Georgia;
+      font-size: 1rem;
+      line-height: 140%;
+      min-width: 290px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+    h2 {
+      padding-top: 2rem;
+      font-variant: small-caps;
+      text-decoration: underline;
+    }
+    h2::before {
+      content: '';
+    }
+    br {
+      margin-bottom: 0.5rem;
+      display: block;
+      content: '';
+    }
+    img {
+      display: block;
+    }
+    @media screen and (min-width: 600px) {
+      #contact, #langsEntry {
+        margin-left: 2rem;
+        display: table;
+        width: 100%;
+      }
+      #contact .contact-primary, #langsEntry .primary {
+        display: table-cell;
+        width: 50%;
+        vertical-align: top;
+      }
+      #contact .contact-secondary, #langsEntry .secondary {
+        display: table-cell;
+        width: 50%;
+        vertical-align: top;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      #contact, #langsEntry {
+        margin-left: 1rem;
+      }
+    }
+    .meta {
+      font-size: 0.7rem;
+      text-align: left;
+    }
+
+    #badges img {
+      margin: 0 auto;
+    }
+    .ghbtns {
+      border: 0px none;
+      width: 5em;
+      height: 1.5em;
+      clear: both;
+      vertical-align:bottom;
+    }
+    #contact dd {
+      padding-bottom: 0.5rem;
+    }
+    .entry h3 {
+      padding-left: 0.7rem;
+    }
+    .entry article {
+      padding-left: 1.5rem;
+    }
+
+    .company {
+      font-size: 0.8rem;
+      text-decoration: underline;
+    }
+    .location {
+      font-size: 0.8rem;
+    }
+    .time {
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+
+    #langs dt {
+      font-weight: bold;
+    }
+
+    @media (max-width: 800px) {
+      .time::before {
+        content: "(";
+      }
+      .time::after {
+        content: ")";
+      }
+    }
+    @media (min-width: 800px) {
+      .time {
+        display: block;
+      }
+    }
+
+    ul.tags {
+      padding: 0;
+      line-height: 165%;
+    }
+    ul.tags > li {
+      line-height: 100%;
+      font-family: HelveticaNeue-Regular,"Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+      font-size: 0.8rem;
+      display: inline-block;
+      padding: 5px;
+    }
+    .tags > li.minor {
+      font-size: 0.6rem;
+    }
+    #toggle-theme {
+      display: block;
+      float:right;
+      margin-right: 2rem;
+    }
+  </style>
+  <style id="print" media="print">
+    @page {
+      size: 21cm 29.7cm;
+      margin: 0.9cm 1.2cm;
+    }
+    .noprint {
+      display: none;
+    }
+    body {
+      font-family: Georgia;
+      font-size: 10pt;
+      line-height: 140%;
+      width: 100%;
+    }
+    section {
+      margin-bottom: 0.3cm;
+    }
+    #education {
+      padding-top: 1cm; /* chrome print hack */
+    }
+    h2 {
+      font-size: 14pt;
+      margin: 0.4cm 0cm 0.4cm;
+      font-variant: small-caps;
+      text-decoration: underline;
+    }
+    h3 {
+      font-size: 12pt;
+      margin: 0.3cm 0cm 0.2cm;
+    }
+    p {
+      margin: 0.2cm 0cm;
+    }
+    a {
+      color: inherit !important;
+      text-decoration: none;
+    }
+    a.homepage {
+      color: navy !important;
+      text-decoration: underline;
+    }
+    dl {
+      margin: 0;
+    }
+    br {
+      margin-bottom: 0.1cm;
+      display: block;
+      content: '';
+    }
+    img {
+      display: block;
+    }
+
+    #contact {
+      margin: 0.6cm 0 0cm;
+    }
+    #contact, #langsEntry {
+      margin-left: 0.5cm;
+      display: table;
+      width: 100%;
+    }
+    #contact .contact-primary, #langsEntry .primary {
+      display: table-cell;
+      vertical-align: top;
+    }
+    #contact .contact-secondary, #langsEntry .secondary {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    dl.twocolumn {
+      overflow: auto;
+    }
+    dl.twocolumn dt, dl.twocolumn dd {
+      float: left;
+    }
+    dl.twocolumn dt {
+      clear: left;
+      margin: 0 0.2cm 0 0;
+      width: 3cm;
+    }
+    dl.narrow dt {
+      width: 2cm;
+    }
+    dl.twocolumn dd {
+      margin: 0;
+    }
+
+    .meta {
+      display: none;
+    }
+
+    #badges img {
+      margin: 0 auto;
+    }
+    .ghbtns {
+      border: 0px none;
+      width: 5em;
+      height: 1.5em;
+      clear: both;
+      vertical-align:bottom;
+    }
+    #contact dd {
+      padding-bottom: 0.2cm;
+    }
+    .entry h3 {
+      padding-left: 0.2cm;
+    }
+    .entry article {
+      padding-left: 0.4cm;
+    }
+
+    .company {
+      font-size: 12pt;
+      text-decoration: underline;
+    }
+    .location {
+      font-size: 10pt;
+    }
+    .time {
+      font-size: 10pt;
+      font-style: italic;
+    }
+    .time::before {
+        content: "(";
+    }
+    .time::after {
+      content: ")";
+    }  
+
+    #langs dt {
+      font-weight: bold;
+    }
+
+    section {
+      position: relative;
+    }
+    .entry, p, h2, h3 {
+      position: relative;
+      page-break-inside: avoid; /* not supported in chrome! */
+      -webkit-region-break-inside: avoid;
+    }
+
+    ul.tags {
+      padding: 0;
+      margin: 0;
+      line-height: 130%;
+      page-break-before: avoid;
+    }
+    ul.tags > li {
+      line-height: 100%;
+      font-family: HelveticaNeue-Regular,"Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+      font-size: 8pt;
+      background-color: transparent;
+      display: inline-block;
+      padding: 1px;
+    }
+    .tags > li.minor {
+      font-size: 6pt;
+      background-color: transparent;
+    }
+
+    #opensource iframe,
+    #opensource img {
+      display: none;
+    }
+    #opensource .entry,
+    #langs .entry {
+      line-height: 180%;
+    }
+    #opensource h3 {
+      display: inline;
+    }
+    #opensource ul {
+      margin: 0; padding: 0;
+      display: inline;
+    }
+    #opensource li {
+      display: inline;
+      list-style-type: none;
+      margin-left: 10px;
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      enableTheme(!isDark);
+    }
+    function enableThemeSafe(bDark) {
+      isDark = bDark;
+
+      $('light-theme').disabled = bDark;
+      $('dark-theme').disabled = !bDark;
+
+      if (window.history) {
+        history.replaceState(null, null, location.pathname + (bDark ? '#dark' : ''));
+      }
+    }
+    function enableTheme(bDark) {
+      enableThemeSafe(bDark);
+
+      var flairSrcc = '?theme=dark';
+      var flair = $('stack-flair');
+
+      flair.src = bDark ? (flair.src + flairSrcc) : flair.src.replace(flairSrcc, '');
+
+      $('toggle-theme').innerHTML = (bDark ? "light" : "dark" )+ " theme";
+    }
+
+    var $ = document.getElementById.bind(document);
+    var isDark = (location.hash == '#dark');
+    enableThemeSafe(isDark);
+  </script>
+</head>
+<body onload="enableTheme(isDark);">
+
+  <h1>Jakub Gieryluk <small>software engineer / web developer</small></h1>
+
+  <p class="meta">
+    this responsive document is optimized for all modern (<strong>desktop and mobile</strong>) browsers and is <strong>printer-friendly</strong>
+    <a href="javascript:toggleTheme();" id="toggle-theme">dark theme</a>
+  </p>
+
+  <section id="contact">
+    <div class="contact-primary">
+      <dl class="twocolumn">
+        <dt><i class="fa fa-envelope"></i> gmail
+        <dd>jakub.g.opensource or jakub.gieryluk
+
+        <dt><i class="fa fa-link"></i> homepage
+        <dd><a target="_blank" class="homepage" href="https://jakub-g.github.io/">https://jakub-g.github.io</a>
+
+        <dt><i class="fa fa-github"></i> github
+        <dd><a target="_blank" href="https://github.com/jakub-g">jakub-g</a>
+
+        <dt><i class="fa fa-stack-overflow"></i> stackoverflow
+        <dd><a target="_blank" href="http://stackoverflow.com/users/245966/jakub-g">4.7k+ reputation, 400k+ people reached</a>
+
+        <dt class="noprint"><i class="fa fa-stack-overflow"></i> stackoverflow careers
+        <dd class="noprint"><a target="_blank" href="https://careers.stackoverflow.com/jakubgieryluk">see my profile</a>
+      </dl>
+    </div>
+    <div class="contact-secondary">
+      <dl>
+        <dt class="noprint"><i class="fa fa-link"></i> speakerdeck
+        <dd class="noprint"><a target="_blank" href="https://speakerdeck.com/jakubg">see my presentations</a>
+
+        <dt class="noprint"><i class="fa fa-linkedin-square"></i> linkedin
+        <dd class="noprint"><a target="_blank" href="https://www.linkedin.com/in/jakubgieryluk">see my profile</a>
+
+        <dt class="noprint"><i class="fa fa-link"></i> openhub
+        <dd class="noprint"><a target="_blank" href="https://www.openhub.net/accounts/jakub-g">opensource stats</a>
+      </dl>
+
+      <section id="badges">
+        <a target="_blank" href="http://stackoverflow.com/users/245966/jakub-g">
+          <img id="stack-flair" src="http://stackoverflow.com/users/flair/245966.png" width="208" height="58" alt="profile for jakub.g at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for jakub.g at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+        </a>
+      </section>
+    </div>
+  </section>
+
+  <section id="exp">
+    <h2>Professional experience</h2>
+
+    <div class="entry">
+      <h3>
+        Mobile and web applications developer,
+        <span class="company">Amadeus IT Group,</span>
+        <span class="location">Sophia Antipolis, France</span>
+        <span class="time">2015 - current</span>
+      </h3>
+      <article>
+        <p class="description">
+          Developing the front-end of a hybrid mobile/web B2C/B2B application for travellers (Android/iOS).<br>
+
+          Feature development, bugfixing; optimizing the <strong>front-end performance</strong>.
+          Code reviews.
+
+          <ul class="tags">
+            <li>JavaScript</li>
+            <li>HTML5</li>
+            <li class="minor">CSS3</li>
+            <li class="minor">Cordova</li>
+            <li class="minor">Java</li>
+            <li class="minor">Maven</li>
+            <li>Git</li>
+            <li>JSHint</li>
+            <li>Atlassian Stash</li>
+            <li>Chrome Dev Tools</li>
+            <li>bash</li>
+            <li class="minor">NodeJS</li>
+            <li class="minor">GruntJS</li>
+            <li>Fiddler</li>
+          </ul>
+        </p>
+      </article>
+    </div>
+    <div class="entry">
+      <h3>
+        JavaScript UI frameworks developer,
+        <span class="company">Amadeus IT Group,</span>
+        <span class="location">Sophia Antipolis, France</span>
+        <span class="time">2012 - 2015</span>
+      </h3>
+      <article>
+        <p class="description">
+          Core developer of an in-house open-source JavaScript UI &amp; templating framework,
+          used by 100+ developers, and related tools.<br class="noprint">
+
+          Main responsibilities: Implementing new features in a big codebase in a <strong>backward-compatible</strong> way, fixing bugs.
+          Improving testing tools. Build automation. Release management. Writing documentation and blog articles.
+          Technical support for the users of the framework.<br>
+
+          <strong>Technical expert role in a team of 10+</strong> developers: participating in technical discussions;
+          establishing best practices; <strong>code reviews</strong> and code integration.
+          Presenter during knowledge sharing sessions.<br>
+
+          Extensive experience in <strong>debugging complex</strong> single-page web applications,
+          cross-browser compatibility and front-end unit testing (<strong>Test-Driven Development</strong>).
+          Working in <strong>agile</strong> methodology.
+        </p>
+
+        <ul class="tags">
+          <li>JavaScript</li>
+          <li>HTML5</li>
+          <li class="minor">CSS3</li>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>JSHint</li>
+          <li>Firebug</li>
+          <li>Chrome Dev Tools</li>
+          <li>IE Dev Tools</li>
+          <li class="minor">PhantomJS</li>
+          <li class="minor">Eclipse</li>
+          <li>bash</li>
+          <li>NodeJS</li>
+          <li>npm</li>
+          <li>GruntJS</li>
+          <li>Fiddler</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="entry">
+      <h3>
+        Java web developer,
+        <span class="company">QBICO s.c.,</span>
+        <span class="location">Wroclaw, Poland</span>
+        <span class="time">2010 - 2011</span>
+      </h3>
+      <article>
+        <p class="description">
+          Employee #1 (after the owners) in a small software house focused on databases, data warehouses
+          and business intelligence.<br class="noprint">
+
+          Main responsibilities: Programming data warehouse middleware and a full-text search engine,
+          bugfixing, writing unit tests and builds.
+        </p>
+        <ul class="tags">
+          <li>Java</li>
+          <li class="minor">JSP</li>
+          <li>SQL</li>
+          <li>JUnit</li>
+          <li class="minor">Struts</li>
+          <li class="minor">Ant</li>
+          <li>Lucene</li>
+          <li class="minor">Eclipse</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="entry">
+      <h3>
+        PHP full-stack web developer,
+        <span class="company">Dictionary.com,</span>
+        <span class="location">remote</span>
+        <span class="time">2010 - 2011</span>
+      </h3>
+      <article>
+        <p class="description">
+          Worked on the user signup and profile area.
+          Developed the backend and the frontend of an email newsletter and integration with SendGrid.
+          Designed and implemented a REST API for the app. Bugfixes.
+        </p>
+        <ul class="tags">
+          <li>PHP</li>
+          <li>MySQL</li>
+          <li>CodeIgniter</li>
+          <li>Doctrine ORM</li>
+          <li>HTML</li>
+          <li class="minor">CSS</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="entry">
+      <h3>
+        .NET web developer (summer intern),
+        <span class="company">Volvo IT,</span>
+        <span class="location">Wroclaw, Poland</span>
+        <span class="time">2009</span>
+      </h3>
+      <article>
+        <p class="description">
+          Development of an IT system for the HR department; teamwork using agile methodology.
+        </p>
+        <ul class="tags">
+          <li>C#</li>
+          <li>ASP.NET MVC</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="entry">
+      <h3>
+        PHP web developer,
+        <span class="company">TopSolutions,</span>
+        <span class="location">Wroclaw, Poland</span>
+        <span class="time">2009</span>
+      </h3>
+      <article>
+        <p class="description">
+          Implementation of customer websites and internal tools. Search-engine optimization.
+        </p>
+        <ul class="tags">
+          <li>PHP</li>
+          <li>Zend Framework</li>
+          <li>MySQL</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>SEO</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="entry">
+      <h3>
+        Freelance web developer,
+        <span class="location">remote</span>
+        <span class="time">2002-2008</span>
+      </h3>
+      <article>
+        <p class="description">
+          Creating and maintaining websites for various customers, in particular
+          a website of a local basketball team.
+        </p>
+        <ul class="tags">
+          <li>PHP</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li class="minor">JavaScript</li>
+          <li class="minor">MySQL</li>
+          <li>SEO</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="entry">
+      <h3>
+        Computer Science,
+        <span class="company">Wroclaw University of Technology (PWr),</span>
+        <span class="location">Poland</span>
+        <span class="time">2006 - 2011</span>
+      </h3>
+      <article>
+        Uniform master studies. All the exams passed in first term. Avg. grade of all subjects: 4.72 (of max. 5.50).<br>
+
+        <strong>Graduated in June 2011 with a title M.Sc.Eng., final grade: very good.</strong>
+      </article>
+    </div>
+
+    <div class="entry">
+      <h3>
+        Computer Science,
+        <span class="company">Universidad Politécnica de Valencia (UPV),</span>
+        <span class="location">Spain</span>
+        <span class="time">2009 - 2010</span>
+      </h3>
+      <article>
+        One-year scholarship. All the exams passed in first term.
+        Avg. grade of all subjects: 7.97 (of max 10.00).
+      </article>
+    </div>
+
+    <div class="entry">
+      <h3>
+        Maths &amp; Physics (profile),
+        <span class="company">Boleslaw Chrobry High School,</span>
+        <span class="location">Brzeg, Poland</span>
+        <span class="time">2003 - 2006</span>
+      </h3>
+      <article>
+        Maturity exam (state exam) results: <strong>Maths (98% basic, 100% extended)</strong>, Physics (98% basic,
+        68% extended), English (97% basic written, 87% extended written, 100% oral).<br>
+
+        <strong>Polish Prime Minister Scholarship for school achievements</strong> (2004).
+      </article>
+    </div>
+  </section>
+
+  <section id="opensource">
+    <h2>Open-source contributions</h2>
+
+    <div class="entry">
+      <h3>Own projects (selection)</h3>
+      <ul>
+        <li><a target="_blank" href="https://github.com/jakub-g/gh-code-review-assistant">gh-code-review-assistant</a>
+          <iframe class="ghbtns" src="http://ghbtns.com/github-btn.html?user=jakub-g&amp;repo=gh-code-review-assistant&amp;type=watch&amp;count=true"></iframe>
+        <li><a target="_blank" href="https://www.npmjs.com/package/biased-opener">biased-opener
+          <img src="https://nodei.co/npm/biased-opener.png?downloads=true"></a>
+        <li><a target="_blank" href="https://www.npmjs.com/package/x-default-browser">x-default-browser
+          <img src="https://nodei.co/npm/x-default-browser.png?downloads=true"></a>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <h3>Major contributions</h3>
+      <ul>
+        <li><a target="_blank" href="https://github.com/ariatemplates/ariatemplates/commits/master?author=jakub-g">ariatemplates - UI framework (JS)</a>
+        <li><a target="_blank" href="https://github.com/attester/attester/commits/master?author=jakub-g">attester - test runner (NodeJS)</a>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <h3>Minor contributions (selection)</h3>
+      <ul>
+        <li><a target="_blank" href="https://github.com/node-inspector/node-inspector/commits/master/?author=jakub-g">node-inspector</a>
+        <li><a target="_blank" href="https://github.com/gruntjs/grunt-contrib-watch/commits/master?author=jakub-g">grunt-watch</a>
+        <li><a target="_blank" href="https://github.com/domenic/opener/commits/master?author=jakub-g">opener</a>
+        <li><a target="_blank" href="https://github.com/benderjs/browser-launcher2/commits/master?author=jakub-g">browser-launcher2</a>
+        <li><a target="_blank" href="https://github.com/vweevers/win-detect-browsers/commits/master?author=jakub-g">win-detect-browsers</a>
+        <li><a target="_blank" href="https://github.com/Marak/colors.js/commits/master?author=jakub-g">colors.js</a>
+      </ul>
+    </div>
+  </section>
+
+  <section id="langs">
+    <h2>Language skills</h2>
+
+    <div class="entry" id="langsEntry">
+      <dl class="twocolumn narrow primary">
+        <dt>Polish
+        <dd>native
+
+        <dt>English
+        <dd>fluent (C1+)
+
+        <dt>French
+        <dd>basic (A2)
+      </dl>
+      <dl class="twocolumn narrow secondary">
+        <dt>Spanish
+        <dd>basic (A1)
+
+        <dt>Russian
+        <dd>basic (A1)
+      </dl>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="../ga.js" async="async"></script>
+</body>
+</html>

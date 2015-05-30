@@ -124,7 +124,7 @@ a:active::-moz-selection {
     display: block;
     clear: both;
     background-color: #666;
-    width: 430px;
+    width: 330px;
     max-width: 95%;
     padding-left: 10px;
     border-radius: 5px;
