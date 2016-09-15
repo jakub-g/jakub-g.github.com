@@ -102,6 +102,12 @@
     h2::before {
       content: '';
     }
+    .high-level-container > .entry > h3 {
+      cursor: pointer;
+    }
+    .high-level-container > .entry > h3::before {
+      content: '> ';
+    }
     br {
       margin-bottom: 0.5rem;
       display: block;
@@ -150,7 +156,7 @@
     #contact dd {
       padding-bottom: 0.5rem;
     }
-    .entry h3 {
+    .entry > h3 {
       padding-left: 0.7rem;
     }
     .entry article {
@@ -214,6 +220,9 @@
     @page {
       size: 21cm 29.7cm;
       margin: 0.9cm 1.2cm;
+    }
+    article {
+      display: block !important;
     }
     .noprint {
       display: none;
@@ -420,12 +429,39 @@
       $('toggle-theme').innerHTML = (bDark ? "light" : "dark" ) + " theme";
     }
 
+    function handleClick(evt) {
+      if (event.target.tagName === "H3") {
+        toggleNextSibling(event.target);
+      }
+    }
+    function toggleNextSibling(elem) {
+      var sibling = elem.nextElementSibling;
+      if (sibling) {
+        sibling.style.display = sibling.style.display === 'none' ? 'block' : 'none';
+      }
+    }
+
+    function enableClickHandlersAndHideSomeStuff() {
+      var hlc = document.querySelectorAll('.high-level-container');
+      hlc.forEach(function (container) {
+        container.addEventListener("click", handleClick);
+        container.querySelectorAll("h3").forEach(toggleNextSibling);
+        // hack: unhide first one
+        [container.querySelector("h3")].forEach(toggleNextSibling);
+      });
+    }
+
     var $ = document.getElementById.bind(document);
     var isDark = (location.hash == '#dark');
     enableThemeSafe(isDark);
+
+    document.addEventListener("DOMContentLoaded", function() {
+      enableTheme(isDark);
+      enableClickHandlersAndHideSomeStuff();
+    });
   </script>
 </head>
-<body onload="enableTheme(isDark);">
+<body>
 
   <h1>Jakub Gieryluk <small>software engineer / web developer</small></h1>
 
@@ -480,8 +516,8 @@
     </div>
   </section>
 
-  <section id="exp">
-    <h2>Professional experience</h2>
+  <section id="exp" class="high-level-container">
+    <h2>Professional experience <span class="noprint">(click to expand)</span></h2>
 
     <div class="entry">
       <h3>
@@ -530,7 +566,7 @@
       </h3>
       <article>
         <p class="description">
-          Developing the front-end of a hybrid mobile web application for travellers.<br>
+          Developing front-end of a hybrid mobile web application for travellers.<br>
 
           Feature development, bugfixing, optimizing the <strong>front-end performance</strong>.
           Code reviews.
@@ -715,7 +751,7 @@
     </div>
   </section>
 
-  <section id="education">
+  <section id="education" class="high-level-container">
     <h2>Education</h2>
 
     <div class="entry">
@@ -726,7 +762,7 @@
         <span class="time">2006 - 2011</span>
       </h3>
       <article>
-        Uniform master studies. All the exams passed in first term. Avg. grade of all subjects: 4.72 (of max. 5.50).<br>
+         5-year master studies with extended Math curriculum. All the exams passed in the first attempt. Avg. grade of all subjects: 4.72 (of max. 5.50).<br>
 
         <strong>Graduated in June 2011 with a title M.Sc.Eng., final grade: very good.</strong>
       </article>
@@ -740,7 +776,7 @@
         <span class="time">2009 - 2010</span>
       </h3>
       <article>
-        One-year scholarship. All the exams passed in first term.
+        One-year scholarship. All the exams passed in the first attempt.
         Avg. grade of all subjects: 7.97 (of max 10.00).
       </article>
     </div>
@@ -753,10 +789,10 @@
         <span class="time">2003 - 2006</span>
       </h3>
       <article>
-        Maturity exam (state exam) results: <strong>Maths (98% basic, 100% extended)</strong>, Physics (98% basic,
-        68% extended), English (97% basic written, 87% extended written, 100% oral).<br>
+        <strong>Polish Prime Minister Scholarship for school achievements</strong> (2004).<br>
 
-        <strong>Polish Prime Minister Scholarship for school achievements</strong> (2004).
+        Maturity exam (state exam) results: <strong>Maths (98% basic, 100% extended)</strong>, Physics (98% basic,
+        68% extended), English (97% basic written, 87% extended written, 100% oral).
       </article>
     </div>
   </section>
