@@ -446,7 +446,7 @@
       $('toggle-theme').innerHTML = (bDark ? "light" : "dark" ) + " theme";
     }
 
-    function handleClick(evt) {
+    function handleClick(event) {
       if (event.target.tagName === "H3") {
         toggleNextSibling(event.target);
       }
@@ -460,11 +460,11 @@
 
     function enableClickHandlersAndHideSomeStuff() {
       var hlc = document.querySelectorAll('.high-level-container');
-      hlc.forEach(function (container) {
+      [].forEach.call(hlc, function (container) {
         container.addEventListener("click", handleClick);
-        container.querySelectorAll("h3").forEach(toggleNextSibling);
+        [].forEach.call(container.querySelectorAll("h3"), toggleNextSibling);
         // hack: unhide some
-        container.querySelectorAll("h3.visible-by-default").forEach(toggleNextSibling);
+        [].forEach.call(container.querySelectorAll("h3.visible-by-default"), toggleNextSibling);
       });
     }
 
