@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex">
   <title>Jakub Gieryluk - software engineer - CV</title>
   <link rel="stylesheet" href="./normalize.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <style id="dark-theme" media="screen">
     body {
       color: #CCC;
@@ -205,6 +205,9 @@
       display: block;
       float:right;
       margin-right: 2rem;
+    }
+    #stack-flair-dark {
+      display: none;
     }
   </style>
   <style id="print" media="print">
@@ -407,12 +410,14 @@
     function enableTheme(bDark) {
       enableThemeSafe(bDark);
 
-      var flairSrcc = '?theme=dark';
-      var flair = $('stack-flair');
+      var lightFlair = $('stack-flair');
+      var darkFlair = $('stack-flair-dark');
 
-      flair.src = bDark ? (flair.src + flairSrcc) : flair.src.replace(flairSrcc, '');
+      // change flair src
+      lightFlair.style.display = bDark ? 'none' : 'block';
+      darkFlair.style.display = !bDark ? 'none' : 'block';
 
-      $('toggle-theme').innerHTML = (bDark ? "light" : "dark" )+ " theme";
+      $('toggle-theme').innerHTML = (bDark ? "light" : "dark" ) + " theme";
     }
 
     var $ = document.getElementById.bind(document);
@@ -432,6 +437,12 @@
   <section id="contact">
     <div class="contact-primary">
       <dl class="twocolumn">
+        <dt><i class="fa fa-flag"></i> nationality
+        <dd>Polish (EU national)
+
+        <dt><i class="fa fa-flag-o"></i> residing in
+        <dd>France
+
         <dt><i class="fa fa-envelope"></i> gmail
         <dd>jakub.g.opensource or jakub.gieryluk
 
@@ -439,19 +450,19 @@
         <dd><a target="_blank" class="homepage" href="https://jakub-g.github.io/">https://jakub-g.github.io</a>
 
         <dt><i class="fa fa-github"></i> github
-        <dd><a target="_blank" href="https://github.com/jakub-g">jakub-g</a>
+        <dd><a target="_blank" href="https://github.com/jakub-g">@jakub-g</a> since 2012
 
         <dt><i class="fa fa-stack-overflow"></i> stackoverflow
-        <dd><a target="_blank" href="http://stackoverflow.com/users/245966/jakub-g">6k+ reputation, 700k+ people reached</a>
-
-        <dt class="noprint"><i class="fa fa-stack-overflow"></i> stackoverflow careers
-        <dd class="noprint"><a target="_blank" href="https://careers.stackoverflow.com/jakubgieryluk">see my profile</a>
+        <dd><a target="_blank" href="http://stackoverflow.com/users/245966/jakub-g?tab=profile">active member since 2011</a>
       </dl>
     </div>
     <div class="contact-secondary">
       <dl>
         <dt class="noprint"><i class="fa fa-link"></i> speakerdeck
         <dd class="noprint"><a target="_blank" href="https://speakerdeck.com/jakubg">see my presentations</a>
+
+        <dt class="noprint"><i class="fa fa-stack-overflow"></i> stackoverflow careers
+        <dd class="noprint"><a target="_blank" href="https://careers.stackoverflow.com/jakubgieryluk">see my profile</a>
 
         <dt class="noprint"><i class="fa fa-linkedin-square"></i> linkedin
         <dd class="noprint"><a target="_blank" href="https://www.linkedin.com/in/jakubgieryluk">see my profile</a>
@@ -462,7 +473,8 @@
 
       <section id="badges">
         <a target="_blank" href="http://stackoverflow.com/users/245966/jakub-g">
-          <img id="stack-flair" src="http://stackoverflow.com/users/flair/245966.png" width="208" height="58" alt="profile for jakub.g at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for jakub.g at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+          <img id="stack-flair" src="http://stackoverflow.com/users/flair/245966.png" width="208" height="58" alt="profile for jakub.g at Stack Overflow" title="profile for jakub.g at Stack Overflow">
+          <img id="stack-flair-dark" src="http://stackoverflow.com/users/flair/245966.png?theme=dark" width="208" height="58" alt="profile for jakub.g at Stack Overflow" title="profile for jakub.g at Stack Overflow"">
         </a>
       </section>
     </div>
