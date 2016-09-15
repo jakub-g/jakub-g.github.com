@@ -42,6 +42,7 @@
       background-color: #093353;
     }
   </style>
+  <!-- light theme is screen and print -->
   <style id="light-theme">
     body {
       color: #000;
@@ -76,8 +77,11 @@
       color: #85A1B6;
       background-color: #F0F5F9;
     }
+    #summary > .entry > p {
+      text-indent: 1rem;
+    }
   </style>
-  <style id="shared" media="screen">
+  <style id="shared-dark-and-light" media="screen">
 
     @media (max-width: 600px) {
       img {
@@ -107,9 +111,6 @@
     }
     .high-level-container > .entry > h3::before {
       content: '> ';
-    }
-    #summary > .entry > p {
-      text-indent: 1rem;
     }
     br {
       margin-bottom: 0.5rem;
@@ -232,15 +233,20 @@
     }
     body {
       font-family: Georgia;
-      font-size: 10pt;
+      font-size: 9pt;
       line-height: 140%;
       width: 100%;
     }
     section {
       margin-bottom: 0.3cm;
     }
+
+    #exp2 {
+      /*page-break-before: always;*/
+      padding-top: 1.2cm;  /* chrome print hack */
+    }
     #education {
-      padding-top: 1cm; /* chrome print hack */
+      /* padding-top: 1cm; */ /* chrome print hack */
     }
     h2 {
       font-size: 14pt;
@@ -366,6 +372,7 @@
     section {
       position: relative;
     }
+
     .entry, p, h2, h3 {
       position: relative;
       page-break-inside: avoid; /* not supported in chrome! */
@@ -483,11 +490,8 @@
   <section id="contact">
     <div class="contact-primary">
       <dl class="twocolumn">
-        <dt><i class="fa fa-flag"></i> nationality
-        <dd>Polish (EU national)
-
-        <dt><i class="fa fa-flag-o"></i> currently residing in
-        <dd>France
+        <dt><i class="fa fa-flag"></i> nationality / residence
+        <dd>Polish (EU national), now residing in France
 
         <dt><i class="fa fa-envelope"></i> gmail
         <dd>jakub.g.opensource or jakub.gieryluk
