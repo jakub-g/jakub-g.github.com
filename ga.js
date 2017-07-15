@@ -9,5 +9,5 @@ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async
 ga.src = url;
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 };
-add('http://www.google-analytics.com/ga.js');
-add('http://www.statcounter.com/counter/counter.js');
+add('https://www.google-analytics.com/ga.js');
+add('https://www.statcounter.com/counter/counter.js');
