@@ -324,12 +324,15 @@ window.onhashchange = function(e){
 
             // This strange function is to display prompt asking user whether he really wants to leave
             // This is to check the behavior of events attached to anchor elements like this <a href="javascript:void(0);">
-            window.onbeforeunload = function (e) {
-                e = e || window.event;
-                var msg = " Keyboard accessibility page";
-                if (e) {e.returnValue = msg;}
-                return msg;
-            };
+            // Let's only enable it on old IE (since only old IE has issues)
+            if (document.documentMode) {
+                window.onbeforeunload = function (e) {
+                    e = e || window.event;
+                    var msg = " Keyboard accessibility page";
+                    if (e) {e.returnValue = msg;}
+                    return msg;
+                };
+            }
 
             var h1s = document.querySelectorAll('h1[id], a[id^=note]');
             for(var i=0; i<h1s.length; ++i){
