@@ -99,6 +99,14 @@
       margin: 0 auto;
       padding: 15px;
     }
+    .displayBlock {
+      max-height: 500px;
+      overflow: auto;
+    }
+    .displayNone {
+      max-height: 0;
+      overflow: hidden;
+    }
     h2 {
       padding-top: 2rem;
       font-variant: small-caps;
@@ -163,9 +171,14 @@
     }
     .entry > h3 {
       padding-left: 0.7rem;
+      margin-bottom: 0;
     }
     .entry article {
       padding-left: 1.5rem;
+
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in;
     }
 
     .company {
@@ -455,7 +468,13 @@
     function toggleNextSibling(elem) {
       var sibling = elem.nextElementSibling;
       if (sibling) {
-        sibling.style.display = sibling.style.display === 'none' ? 'block' : 'none';
+        if (sibling.classList.contains('displayNone')) {
+          sibling.classList.remove('displayNone');
+          sibling.classList.add('displayBlock');
+        } else {
+          sibling.classList.remove('displayBlock');
+          sibling.classList.add('displayNone');
+        }
       }
     }
 
