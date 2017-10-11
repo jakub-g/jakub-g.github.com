@@ -474,8 +474,9 @@
     }
 
     function handleClick(event) {
-      if (event.target.tagName === "H3") {
-        toggleNextSibling(event.target);
+      if (event.target.tagName === "H3" ||
+          event.target.tagName === "SPAN") {
+        toggleNextSibling(event.currentTarget.firstElementChild);
       }
     }
     function toggleNextSibling(elem) {
@@ -492,7 +493,7 @@
     }
 
     function enableClickHandlersAndHideSomeStuff() {
-      var hlc = document.querySelectorAll('.high-level-container');
+      var hlc = document.querySelectorAll('.high-level-container .entry');
       [].forEach.call(hlc, function (container) {
         container.addEventListener("click", handleClick);
         [].forEach.call(container.querySelectorAll("h3"), toggleNextSibling);
