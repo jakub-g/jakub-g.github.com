@@ -7,6 +7,52 @@
   <meta name="robots" content="noindex">
   <title>Jakub Gieryluk - software engineer - CV</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <style id="print-and-nonprint">
+
+
+    #skillsMatrixWrapperPopupIgnored {
+      position: fixed;
+      top: 10%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+
+      width: 600px;
+      height: 80%;
+      overflow-y: scroll;
+
+      padding: 1rem;
+      border: 2px solid black;
+
+      background: linen;
+      background-repeat: no-repeat;
+    }
+    #skillsMatrix {
+      max-width: 700px;
+      height: 200px;
+      overflow-y: scroll;
+      padding: 10px;
+
+      display: grid;
+      grid-template-columns: 10fr repeat(10, 1fr);
+      /*grid-auto-rows: minmax(25px, auto);*/
+      grid-gap: 4px;
+    }
+    .skill-name {
+      grid-column: 1 / 2;
+    }
+    .skill {
+      /* background-image: linear-gradient(to right, lime, green, yellow, red); */
+      background: #dac1a8;
+      border: 1px solid #ba9f84;
+    }
+    .skill-4 {grid-column: auto / span 4;}
+    .skill-5 {grid-column: auto / span 5;}
+    .skill-6 {grid-column: auto / span 6;}
+    .skill-7 {grid-column: auto / span 7;}
+    .skill-8 {grid-column: auto / span 8;}
+    .skill-9 {grid-column: auto / span 9;}
+  </style>
   <style id="dark-theme" media="screen">
     body {
       color: #CCC;
@@ -197,7 +243,6 @@
 
     .company {
       font-size: 0.8rem;
-      text-decoration: underline;
     }
     .location {
       font-size: 0.8rem;
@@ -247,6 +292,7 @@
     #stack-flair-dark {
       display: none;
     }
+    /*endshared-dark-and-light*/
   </style>
   <style id="print" media="print">
     @page {
@@ -257,7 +303,7 @@
       display: block !important;
     }
     .noprint {
-      display: none;
+      display: none !important;
     }
     body {
       font-family: Georgia;
@@ -378,7 +424,6 @@
 
     .company {
       font-size: 12pt;
-      text-decoration: underline;
     }
     .location {
       font-size: 10pt;
@@ -447,6 +492,14 @@
       list-style-type: none;
       margin-left: 10px;
     }
+    #skillsMatrixWrapper {
+      page-break-before: always;
+    }
+    #skillsMatrix {
+      height: auto;
+      overflow-y: visible;
+    }
+    /*endprint*/
   </style>
   <script>
     function toggleTheme() {
@@ -966,6 +1019,84 @@
         <li><a target="_blank" href="https://github.com/vweevers/win-detect-browsers/commits/master?author=jakub-g">win-detect-browsers</a>
         <li><a target="_blank" href="https://github.com/Marak/colors.js/commits/master?author=jakub-g">colors.js</a>
       </ul>
+    </div>
+  </section>
+
+  <section id="skillsMatrixWrapper">
+    <h2>Skills matrix</h2>
+    <div id="skillsMatrix">
+      <div class="skill-name">JavaScript</div>
+      <div class="skill skill-9"></div>
+      <div class="skill-name">ES6+</div>
+      <div class="skill skill-5"></div>
+      <div class="skill-name">HTML</div>
+      <div class="skill skill-8"></div>
+      <div class="skill-name">DOM APIs</div>
+      <div class="skill skill-8"></div>
+      <div class="skill-name">Web APIs</div>
+      <div class="skill skill-6"></div>
+      <div class="skill-name">Single Page Applications</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Angular.js</div>
+      <div class="skill skill-6"></div>
+      <div class="skill-name">Cross-browser compat</div>
+      <div class="skill skill-9"></div>
+      <div class="skill-name">CSS</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Node.js &amp; npm</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Web performance &amp; optimization</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Web security</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">HTTP</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">HTTPS</div>
+      <div class="skill skill-8"></div>
+      <div class="skill-name">SEO</div>
+      <div class="skill skill-6"></div>
+      <div class="skill-name">Git</div>
+      <div class="skill skill-9"></div>
+      <div class="skill-name">Bash</div>
+      <div class="skill skill-6"></div>
+      <div class="skill-name">Java &amp; its ecosystem</div>
+      <div class="skill skill-5"></div>
+      <div class="skill-name">Android</div>
+      <div class="skill skill-6"></div>
+      <div class="skill-name">Cordova</div>
+      <div class="skill skill-6"></div>
+      <div class="skill-name">SQL</div>
+      <div class="skill skill-4"></div>
+      <div class="skill-name">Build automation</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Unit testing</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Debugging</div>
+      <div class="skill skill-8"></div>
+      <div class="skill-name">Refactoring</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Data modelling &amp; API design</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Backward compatibility</div>
+      <div class="skill skill-8"></div>
+      <div class="skill-name">Release management</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Command line tools</div>
+      <div class="skill skill-8"></div>
+      <div class="skill-name">Technical estimations</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Technical specifications</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">I18n &amp; L10n</div>
+      <div class="skill skill-9"></div>
+      <div class="skill-name">Time &amp; date handling</div>
+      <div class="skill skill-9"></div>
+      <div class="skill-name">User Experience</div>
+      <div class="skill skill-7"></div>
+      <div class="skill-name">Design patterns</div>
+      <div class="skill skill-5"></div>
+      <div class="skill-name">KISS &amp; YAGNI</div>
+      <div class="skill skill-9"></div>
     </div>
   </section>
 
