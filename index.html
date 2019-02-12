@@ -26,6 +26,12 @@
     small {
       font-size: 80%;
     }
+    .nestedList {
+      padding-left: 1.3rem;
+    }
+    .padBlock {
+      padding-left: 1rem;
+    }
     .secondary {
       color: #888;
     }
@@ -38,22 +44,22 @@
 
     <h2>Profile &amp; contact data</h2>
 
-    <div class="entryBlock"><div class="entryBlockInner">
+    <div class="entryBlock">
       <ul>
         <li><a href="https://github.com/jakub-g">github</a></li>
         <li><a href="https://twitter.com/__jakub_g">twitter</a></li>
         <li><a href="https://stackoverflow.com/users/245966/jakub-g?tab=profile">stackoverflow</a></li>
         <li>you can reach me on gmail: jakub.g.opensource</li>
       </ul>
-    </div></div>
+    </div>
 
     <h2 class="clear">Blog</h2>
 
-    <div class="entryBlock"><div class="entryBlockInner">
+    <div class="entryBlock">
       <ul>
         <li>
           <a href="blog/">my dev blog</a> on web platform, android, git, https
-          <ul>
+          <ul class="nestedList">
             <li><a href="blog/reusing-software-translations-ios-android-web/">
               Reusing software translations between Android, iOS and web </a></li>
             <li><a href="blog/https-pitfalls/">
@@ -61,11 +67,11 @@
           </ul>
         </li>
       </ul>
-    </div></div>
+    </div>
 
     <h2 class="clear">External blog posts and gists</h2>
 
-    <div class="entryBlock"><div class="entryBlockInner">
+    <div class="entryBlock padBlock">
       <h3>Web performance</h3>
       <ul>
         <li><a href="https://calendar.perfplanet.com/2018/getting-started-with-web-performance-2019-beginners-guide/">
@@ -95,15 +101,15 @@
           Debugging JavaScript from a remote server in remote browser with Fiddler</a>
         <li><a href="http://ariatemplates.com/blog/category/debugging/">my other blog posts</a> on ariatemplates blog</li>
       </ul>
-    </div></div>
+    </div>
 
     <h2 class="clear">Bonus</h2>
 
-    <div class="entryBlock"><div class="entryBlockInner">
+    <div class="entryBlock">
       <ul>
           <li><a href="http://abstrusegoose.com/249"> Teach yourself programming in 21 days</a></li>
       </ul>
-    </div></div>
+    </div>
   </div>
 
   <script type="text/javascript" src="ga.js"></script>
