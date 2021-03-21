@@ -283,6 +283,9 @@
     #education {
       /* padding-top: 1cm; */ /* chrome print hack */
     }
+    abbr {
+      text-decoration: none ;
+    }
     h2 {
       font-size: 14pt;
       margin: 0.4cm 0cm 0.4cm;
@@ -392,6 +395,7 @@
       display: block;
       font-size: 10pt;
       font-style: italic;
+      font-weight: normal;
     }
     .time::before {
         content: "(";
@@ -561,17 +565,20 @@
         <li>
           3 years of full-time <strong>web peformance optimization</strong> experience
           <ul>
-            <li>Blog post: <a href="https://calendar.perfplanet.com/2018/getting-started-with-web-performance-2019-beginners-guide/">
+            <li>Blogged for Web Performance Calendar 2018:
+            <a href="https://calendar.perfplanet.com/2018/getting-started-with-web-performance-2019-beginners-guide/">
               Getting started with web performance
             </a></li>
-            <li>Presented at <a href="https://2019.rivieradev.fr/orateur/575">RivieraDEV</a> 2019: <a href="https://jakub.gieryluk.net/slides/rivieradev/">Practical Intro to Web Performance</a></li>
+            <li>Presented at <a href="https://2019.rivieradev.fr/orateur/575">RivieraDEV</a> 2019:
+            <a href="https://jakub.gieryluk.net/slides/rivieradev/">Practical Intro to Web Performance</a></li>
           </ul>
         </li>
 
         <li>
           9 years of full-time work experience in big-scale international companies
           <ul>
-            <li>mostly <strong>front-end JavaScript</strong>, but also Android native, Java, PHP</li>
+            <li>mostly <strong>front-end JavaScript</strong> (<abbr title="Single Page Applicatios">SPAs</abbr>),
+            but also Android native, Java, PHP</li>
           </ul>
         </li>
         <li>20 years total experience (including master <abbr title="Computer Science">CS</abbr> studies and hobby / part time web dev)</li>
@@ -596,16 +603,16 @@
 
           <ul>
             <li>Researched &amp; documented player internals and optimization opportunities</li>
-            <li>Prioritized the findings &amp; created performance roadmaps</li>
+            <li><strong>Prioritized the findings &amp; created performance roadmaps</strong></li>
             <li>Defined, implemented, shipped &amp; documented <abbr title="Real User Monitoring">RUM</abbr> performance metrics</li>
-            <li>Built &amp; documented RUM performance monitoring dashboards</li>
+            <li>Built &amp; documented performance RUM dashboards</li>
             <li>Improved the codebase to allow for better profiling &amp; performance analysis</li>
             <li>Shipped multiple perf optimizations (code size, loading priorities)
               <ul>
-                <li>reduced critical JS bundle size by 200 kB total</li>
+                <li><strong>reduced critical JS bundle size by 200 kB total</strong></li>
               </ul>
             </li>
-            <li>Mentored other team members on performance subjects</li>
+            <li>Mentored 8 team members on performance subjects</li>
             <li>Advised on cross-team performance missions</li>
           </ul>
 
@@ -616,7 +623,7 @@
             <li>Contributed to several post-mortem investigations &amp; took actions to avoid issues from re-occurring
             (improved production deployment checklist, improved monitoring dashboards)</li>
             <li>Re-defined localization process &amp; tooling</li>
-            <li>Improved automated test suite resiliency (moved from SauceLabs to headless Chrome)</li>
+            <li>Improved automated test suite robustness (moved from SauceLabs to headless Chrome in Docker)</li>
           </ul>
 
           <ul class="tags noprint">
@@ -738,15 +745,17 @@
       </h3>
       <article>
         <p class="description">
-          <a href="https://github.com/ariatemplates/ariatemplates/graphs/contributors">Core developer</a> of an open-source UI &amp; templating framework,
-          used by 100+ developers, and related tools.<br class="noprint">
+          <a href="https://github.com/ariatemplates/ariatemplates/graphs/contributors">Core developer</a>
+          of an open-source UI &amp; templating framework-library,
+          <strong>used by 100+ developers</strong>, and related tools.<br class="noprint">
 
           <ul>
-            <li>Implemented new features with strong <strong>backward &amp; cross-browser compatibility</strong>; fixed bugs</li>
+            <li>Shipped new features, with <strong>strong backward &amp; cross-browser compatibility</strong>; fixed bugs</li>
             <li><a href="https://github.com/attester/attester/graphs/contributors">Improved test tools</a>,
               CI / build automation &amp; their performance, tooling</li>
             <li>Release management</li>
-            <li>Wrote docs and <a href="http://ariatemplates.com/blog/category/debugging/">blog articles</a>,
+            <li>Wrote docs and
+              <a href="http://web.archive.org/web/20200214203802/http://ariatemplates.com/blog/category/debugging/">blog articles</a>,
               support</li>
 
             <li><strong>Technical expert role in a team of ~15</strong> developers
@@ -757,7 +766,7 @@
                 <li>presented in several knowledge sharing sessions</li>
               </ul>
 
-            <li>Extensive experience in <strong>debugging complex</strong> single-page web applications,
+            <li>Extensive experience in <strong>debugging complex single-page web applications</strong>,
               cross-browser compatibility and front-end unit testing</li>
           </ul>
         </p>
@@ -797,10 +806,8 @@
       </h3>
       <article>
         <p class="description noprint">
-          Employee #1 (after the co-owners) in a databases/business intelligence startup.<br class="noprint">
-
-          Programming data warehouse middleware and a full-text search engine,
-          bugfixing, writing unit tests and builds.
+          Developed data warehouse middleware, full-text search engine;
+          fixed bugs, wrote unit tests and builds.
         </p>
         <ul class="tags noprint">
           <li>Java</li>
@@ -824,8 +831,8 @@
       </h3>
       <article>
         <p class="description noprint">
-          Worked on a multi-domain Single Sign-On &amp; user profile area; email newsletter (backend, frontend, integration with SendGrid).
-          Designed and implemented a mobile REST API. Bugfixes.
+          Implemented Single Sign-On &amp; user profile area; email newsletter (backend, frontend, integration with SendGrid).
+          Designed and implemented a mobile REST API.
         </p>
         <ul class="tags noprint">
           <li>PHP</li>
@@ -847,7 +854,7 @@
       </h3>
       <article>
         <p class="description noprint">
-          Worked in a 5-dev team (agile) on an IT system for the HR department.
+          Developed an IT system for the HR department (5-dev team).
         </p>
         <ul class="tags noprint">
           <li>C#</li>
@@ -867,7 +874,7 @@
       </h3>
       <article>
         <p class="description noprint">
-          Implementation of customer websites and internal tools. Search-engine optimization.
+          Implemented customer-facing websites and internal tools. Search-engine optimization.
         </p>
         <ul class="tags noprint">
           <li>PHP</li>
@@ -888,8 +895,7 @@
       </h3>
       <article>
         <p class="description noprint">
-          Creating and maintaining websites for various customers, in particular
-          a website of a local basketball team.
+          Built and maintained websites for various customers, including local basketball team.
         </p>
         <ul class="tags noprint">
           <li>PHP</li>
@@ -912,7 +918,7 @@
         Computer Science (M.Sc.Eng.),
         <span class="company">Wroclaw University of Technology,</span>
         <span class="location">Poland</span>
-        <span class="time">2006 - 2011</span>
+        <span class="time">2006 - 2011 · top-3 technical university in Poland</span>
       </h3>
       <article class="noprint">
         <p class="description">
@@ -926,13 +932,8 @@
         Computer Science,
         <span class="company">Universidad Politécnica de Valencia,</span>
         <span class="location">Spain</span>
-        <span class="time">2009 - 2010</span>
+        <span class="time">2009 - 2010 · top-5 technical university in Spain · scholarship</span>
       </h3>
-      <article class="noprint">
-        <p class="description">
-          One-year scholarship.
-        </p>
-      </article>
     </div>
 
     <div class="entry">
@@ -940,13 +941,8 @@
         Maths &amp; Physics,
         <span class="company">Boleslaw Chrobry High School,</span>
         <span class="location">Brzeg, Poland</span>
-        <span class="time">2003 - 2006</span>
+        <span class="time">2003 - 2006 · Polish Prime Minister's Scholarship for achievements</strong> (2004)</span>
       </h3>
-      <article class="noprint">
-        <p class="description">
-          <strong>Polish Prime Minister's Scholarship for school achievements</strong> (2004).
-        </p>
-      </article>
     </div>
   </section>
 
