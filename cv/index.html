@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -604,70 +604,71 @@
       </h3>
       <article>
         <p class="description">
-          Improving loading time of Dailymotion video player (350MM <abbr title="Monthly Active Users">MAU</abbr>, Alexa top-300 traffic site globally).
-
-          <ul>
-            <li>Researched &amp; documented player internals and optimization opportunities</li>
-            <li><strong>Prioritized the findings &amp; created performance roadmaps</strong></li>
-            <li>Defined, implemented, shipped &amp; documented <abbr title="Real User Monitoring">RUM</abbr> performance metrics</li>
-            <li><strong>Built &amp; documented performance RUM dashboards</strong></li>
-            <li>Improved the codebase to allow for better profiling &amp; performance analysis</li>
-            <li>Shipped multiple perf optimizations
-              <ul>
-                <li>
-                  Reshuffled JavaScript loading priorities and preloaded critical subresources
-                  <ul>
-                    <li><strong>3x ~10% load time improvements</strong></li>
-                  </ul>
-                </li>
-                <li>
-                  Reduced critical JS bundle size by ~15% (200 kB js.min, 50 kB gzipped)
-                  by minimally changing browser support level, dropping dead code and heavy dependencies
-                  <ul>
-                    <li><strong>JS load time improved by ~20% at 90th percentile; bounce rate down by ~10%</strong></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><strong>Mentored 8 team members</strong> on performance subjects</li>
-            <li>Advised on <strong>cross-team performance missions</strong></li>
-          </ul>
-
-          Other deliveries:
-          <ul>
-            <li>
-              Documented team processes that were poorly defined and mostly ad-hoc
-              <ul>
-                <li>Defined data-driven <strong>organization-wide browser support policy</strong></li>
-                <li>Re-defined localization process &amp; tooling</li>
-                <li>Wrote guide on adding and validating telemetry</li>
-                <li>Wrote guide on how to investigate unexpected spikes in telemetry</li>
-              </ul>
-            </li>
-            <li>
-              Contributed to several post-mortem investigations &amp; <strong>took actions to prevent issues from re-occurring</strong>
-              <ul>
-                <li>Improved production deployment checklist</li>
-                <li>Improved release monitoring dashboards</li>
-              </ul>
-            </li>
-            <li>Led the efforts to <strong>increase logs retention (5d -> 21d) to improve regressions investigations</strong></li>
-            <li>Made automated test suite more reliable by moving from SauceLabs to headless Chrome in Docker</li>
-          </ul>
-
-          <ul class="tags">
-            <li>JavaScript (ES6/ESM)</li>
-            <li>Preact</li>
-            <li>Redux</li>
-            <li>webpack</li>
-            <li>Babel</li>
-            <li>WebPageTest</li>
-            <li>Chrome DevTools perf panel</li>
-            <li>Kibana</li>
-            <li class="minor">NodeJS</li>
-            <li class="minor">Git</li>
-          </ul>
+          Improving loading time of Dailymotion video player (350MM
+          <abbr title="Monthly Active Users">MAU</abbr>, Alexa top-300 traffic site globally).
         </p>
+
+        <ul>
+          <li>Researched &amp; documented player internals and optimization opportunities</li>
+          <li><strong>Prioritized the findings &amp; created performance roadmaps</strong></li>
+          <li>Defined, implemented, shipped &amp; documented <abbr title="Real User Monitoring">RUM</abbr> performance metrics</li>
+          <li><strong>Built &amp; documented performance RUM dashboards</strong></li>
+          <li>Improved the codebase to allow for better profiling &amp; performance analysis</li>
+          <li>Shipped multiple perf optimizations
+            <ul>
+              <li>
+                Reshuffled JavaScript loading priorities and preloaded critical subresources
+                <ul>
+                  <li><strong>3x ~10% load time improvements</strong></li>
+                </ul>
+              </li>
+              <li>
+                Reduced critical JS bundle size by ~15% (200 kB js.min, 50 kB gzipped)
+                by minimally changing browser support level, dropping dead code and heavy dependencies
+                <ul>
+                  <li><strong>JS load time improved by ~20% at 90th percentile; bounce rate down by ~10%</strong></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Mentored 8 team members</strong> on performance subjects</li>
+          <li>Advised on <strong>cross-team performance missions</strong></li>
+        </ul>
+
+        Other deliveries:
+        <ul>
+          <li>
+            Documented team processes that were poorly defined and mostly ad-hoc
+            <ul>
+              <li>Defined data-driven <strong>organization-wide browser support policy</strong></li>
+              <li>Re-defined localization process &amp; tooling</li>
+              <li>Wrote guide on adding and validating telemetry</li>
+              <li>Wrote guide on how to investigate unexpected spikes in telemetry</li>
+            </ul>
+          </li>
+          <li>
+            Contributed to several post-mortem investigations &amp; <strong>took actions to prevent issues from re-occurring</strong>
+            <ul>
+              <li>Improved production deployment checklist</li>
+              <li>Improved release monitoring dashboards</li>
+            </ul>
+          </li>
+          <li>Led the efforts to <strong>increase logs retention (5d -> 21d) to improve regressions investigations</strong></li>
+          <li>Made automated test suite more reliable by moving from SauceLabs to headless Chrome in Docker</li>
+        </ul>
+
+        <ul class="tags">
+          <li>JavaScript (ES6/ESM)</li>
+          <li>Preact</li>
+          <li>Redux</li>
+          <li>webpack</li>
+          <li>Babel</li>
+          <li>WebPageTest</li>
+          <li>Chrome DevTools perf panel</li>
+          <li>Kibana</li>
+          <li class="minor">NodeJS</li>
+          <li class="minor">Git</li>
+        </ul>
       </article>
     </div>
 
@@ -683,25 +684,26 @@
       <article>
         <p class="description">
           Rewrite of hybrid Cordova app as a native Android app for better UX. Features delivered:
-          <ul>
-            <li>Seamless user migration from the hybrid Cordova app</li>
-            <li>Localization &amp; internationalization code, processes &amp; tooling</li>
-            <li>&quot;Add to calendar&quot; and share-related code</li>
-            <li>Parts of the UI of the app</li>
-          </ul>
-
-          <ul class="tags noprint">
-            <li>Android</li>
-            <li>Java</li>
-            <li>Android Studio</li>
-            <li class="minor">Material Design</li>
-            <li class="minor">RxJava</li>
-            <li class="minor">Dagger</li>
-            <li class="minor">JUnit</li>
-            <li class="minor">Robolectric</li>
-            <li>Git</li>
-          </ul>
         </p>
+
+        <ul>
+          <li>Seamless user migration from the hybrid Cordova app</li>
+          <li>Localization &amp; internationalization code, processes &amp; tooling</li>
+          <li>&quot;Add to calendar&quot; and share-related code</li>
+          <li>Parts of the UI of the app</li>
+        </ul>
+
+        <ul class="tags noprint">
+          <li>Android</li>
+          <li>Java</li>
+          <li>Android Studio</li>
+          <li class="minor">Material Design</li>
+          <li class="minor">RxJava</li>
+          <li class="minor">Dagger</li>
+          <li class="minor">JUnit</li>
+          <li class="minor">Robolectric</li>
+          <li>Git</li>
+        </ul>
       </article>
     </div>
 
@@ -715,7 +717,6 @@
         <span class="time">~2.5 years (01.2015 - 04.2017)</span>
       </h3>
       <article>
-        <p class="description">
           <ul>
             <li>Rebuilt from scratch a ~2MM <abbr title="Monthly Active Users">MAU</abbr> travel app
              (Android &amp; web) using Ionic/Cordova/Angular.js (3 dev team)</li>
@@ -764,7 +765,6 @@
             <li class="minor">Gulp</li>
             <li>bash</li>
           </ul>
-        </p>
       </article>
     </div>
 
@@ -780,26 +780,26 @@
           <a href="https://github.com/ariatemplates/ariatemplates/graphs/contributors">Core developer</a>
           of an open-source UI framework &amp; widget library,
           <strong>used by 100+ developers</strong>, and related tools.
-
-          <ul>
-            <li>Shipped new features, with <strong>strong backward &amp; cross-browser compatibility</strong></li>
-            <li>Debugged compatibility issues in <strong>complex single-page web applications</strong></li>
-            <li><a href="https://github.com/attester/attester/graphs/contributors">Improved test tools</a>,
-              CI / build automation reliability &amp; performance</li>
-            <li>Wrote docs and
-              <a href="http://web.archive.org/web/20200214203802/http://ariatemplates.com/blog/category/debugging/">blog
-              articles</a>; technical support for external teams</li>
-
-            <li>Internal <strong>technical expert role (1 of 5) in a team of ~15</strong> developers
-              <ul>
-                <li>Contributed to technical discussions; established best practices</li>
-                <li>Code reviews and code integration</li>
-                <li>Release management</li>
-                <li>Presented in several knowledge sharing sessions</li>
-              </ul>
-            </li>
-          </ul>
         </p>
+
+        <ul>
+          <li>Shipped new features, with <strong>strong backward &amp; cross-browser compatibility</strong></li>
+          <li>Debugged compatibility issues in <strong>complex single-page web applications</strong></li>
+          <li><a href="https://github.com/attester/attester/graphs/contributors">Improved test tools</a>,
+            CI / build automation reliability &amp; performance</li>
+          <li>Wrote docs and
+            <a href="http://web.archive.org/web/20200214203802/http://ariatemplates.com/blog/category/debugging/">blog
+            articles</a>; technical support for external teams</li>
+
+          <li>Internal <strong>technical expert role (1 of 5) in a team of ~15</strong> developers
+            <ul>
+              <li>Contributed to technical discussions; established best practices</li>
+              <li>Code reviews and code integration</li>
+              <li>Release management</li>
+              <li>Presented in several knowledge sharing sessions</li>
+            </ul>
+          </li>
+        </ul>
 
         <ul class="tags">
           <li>JavaScript</li>
@@ -969,7 +969,7 @@
         Maths &amp; Physics,
         <span class="company">Boleslaw Chrobry High School,</span>
         <span class="location">Brzeg, Poland</span>
-        <span class="time">2003 - 2006 · Polish Prime Minister's Scholarship for achievements</strong> (2004)</span>
+        <span class="time">2003 - 2006 · Polish Prime Minister's Scholarship for achievements (2004)</span>
       </h3>
     </div>
   </section>
