@@ -274,7 +274,7 @@
       display: none !important;
     }
     .printonly_spacer {
-      padding: 1em 0;
+      padding: 0.6em 0;
     }
     body {
       font-family: Georgia;
@@ -635,11 +635,23 @@
 
           Other deliveries:
           <ul>
-            <li>Defined data-driven <strong>organization-wide browser support policy</strong></li>
-            <li>Contributed to several post-mortem investigations &amp; <strong>took actions to prevent issues from re-occurring</strong>
-              <br />(improved production deployment checklist, improved monitoring dashboards)</li>
+            <li>
+              Documented team processes that were poorly defined and mostly ad-hoc
+              <ul>
+                <li>Defined data-driven <strong>organization-wide browser support policy</strong></li>
+                <li>Re-defined localization process &amp; tooling</li>
+                <li>Wrote guide on adding and validating telemetry</li>
+                <li>Wrote guide on how to investigate unexpected spikes in telemetry</li>
+              </ul>
+            </li>
+            <li>
+              Contributed to several post-mortem investigations &amp; <strong>took actions to prevent issues from re-occurring</strong>
+              <ul>
+                <li>Improved production deployment checklist</li>
+                <li>Improved release monitoring dashboards</li>
+              </ul>
+            </li>
             <li>Led the efforts to <strong>increase logs retention (5d -> 21d) to improve regressions investigations</strong></li>
-            <li>Re-defined localization process &amp; tooling</li>
             <li>Made automated test suite more reliable by moving from SauceLabs to headless Chrome in Docker</li>
           </ul>
 
@@ -723,7 +735,7 @@
           Major deliveries:
           <ul>
             <li><strong>debugged &amp; resolved several critical issues</strong> with Android app
-              (can't update the app / log in / connect over HTTPS)</li>
+              (some users unable to update / log in / connect over HTTPS)</li>
             <li>led the <strong>migration</strong> from the legacy web app in a <strong>smooth and backward-compatible way</strong></li>
             <li>set up a robust, automated build infrastructure on top of Jenkins, including a HipChat bot</li>
             <li>authentication, seamless account activation, forgot password flows</li>
