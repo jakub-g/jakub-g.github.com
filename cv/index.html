@@ -437,6 +437,7 @@
     ul.tags {
       padding: 0;
       margin: 0;
+      font-size:0; /*prevent spaces*/
       line-height: 130%;
       page-break-before: avoid;
     }
@@ -446,7 +447,9 @@
       font-size: 8pt;
       background-color: transparent;
       display: inline-block;
-      padding: 1px;
+      padding: 3px;
+      margin: 1px;
+      border: 1px solid gray;
     }
     .tags > li.minor {
       font-size: 6pt;
@@ -616,8 +619,8 @@
           <li>WebPageTest</li>
           <li>Chrome DevTools perf panel</li>
           <li>Kibana</li>
-          <li class="minor">NodeJS</li>
-          <li class="minor">Git</li>
+          <li>NodeJS</li>
+          <li>Git</li>
         </ul>
 
         <p class="description">
@@ -733,11 +736,8 @@
             <li>Jenkins</li>
             <li>Chrome DevTools</li>
             <li>NodeJS</li>
-            <li>npm</li>
-            <li>bower</li>
             <li>HTTPS</li>
             <li>Apache</li>
-            <li class="minor">Gulp</li>
             <li>bash</li>
           </ul>
 
@@ -791,9 +791,9 @@
           <li>Chrome DevTools</li>
           <li>IE DevTools</li>
           <li class="minor">PhantomJS</li>
-          <li>bash</li>
           <li>GruntJS</li>
           <li>Fiddler</li>
+          <li>bash</li>
         </ul>
 
         <p class="description">
