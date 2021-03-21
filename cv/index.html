@@ -614,7 +614,19 @@
             <li>Improved the codebase to allow for better profiling &amp; performance analysis</li>
             <li>Shipped multiple perf optimizations (code size, loading priorities)
               <ul>
-                <li><strong>reduced critical JS bundle size by 200 kB total</strong></li>
+                <li>
+                  reshuffled JavaScript loading priorities and preloaded critical subresources
+                  <ul>
+                    <li><strong>3x ~10% load time improvements</strong></li>
+                  </ul>
+                </li>
+                <li>
+                  reduced critical JS bundle size by ~15% (200 kB js.min, 50 kB gzipped)
+                  by minimally changing browser support level, dropping dead code and heavy dependencies
+                  <ul>
+                    <li><strong>load time improved by ~20% at 90th percentile; bounce rate down by ~10%</strong></li>
+                  </ul>
+                </li>
               </ul>
             </li>
             <li><strong>Mentored 8 team members</strong> on performance subjects</li>
