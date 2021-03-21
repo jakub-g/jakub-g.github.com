@@ -97,7 +97,7 @@
         max-width: 100%;
       }
       .displayBlock {
-        max-height: 1000px !important;
+        max-height: 2000px !important;
       }
     }
 
@@ -114,7 +114,7 @@
       cursor: help;
     }
     .displayBlock {
-      max-height: 500px;
+      max-height: 2000px;
       overflow: auto;
     }
     .displayNone {
@@ -269,13 +269,12 @@
       font-family: Georgia;
       font-size: 9pt;
       line-height: 140%;
-      width: 100%;
+      /*width: 100%;*/
     }
     section {
       margin-top: 0.6cm;
       margin-bottom: 0.3cm;
     }
-
     #exp2 {
       /*page-break-before: always;*/
       /*padding-top: 1.2cm;*/  /* chrome print hack */
@@ -285,6 +284,11 @@
     }
     abbr {
       text-decoration: none ;
+    }
+    .h1url {
+      font-size: 0.5em;
+      float: right;
+      text-align: center;
     }
     h2 {
       font-size: 14pt;
@@ -507,7 +511,8 @@
 </head>
 <body>
 
-  <h1>Jakub Gieryluk <small>senior software engineer</small></h1>
+  <h1>Jakub Gieryluk <small>senior software engineer</small>
+    <span class="h1url">jakub.gieryluk.net/cv<br>last updated 2021.03</span></h1>
 
   <p class="meta">
     <a href="javascript:toggleTheme();" id="toggle-theme">dark theme</a>
@@ -516,7 +521,7 @@
   <section id="contact">
     <div class="contact-primary">
       <dl class="twocolumn">
-        <dt><i class="fa fa-flag"></i> nationality / residence</dt>
+        <dt><i class="fa fa-flag"></i> nationality &amp; residence</dt>
         <dd>Polish (EU national); residing in France</dd>
 
         <dt><i class="fa fa-envelope"></i> gmail</dt>
@@ -532,7 +537,7 @@
         <dd><a target="_blank" href="https://github.com/jakub-g">@jakub-g</a> since 2012</dd>
 
         <dt><i class="fa fa-stack-overflow"></i> stackoverflow</dt>
-        <dd><a target="_blank" href="https://stackoverflow.com/users/245966/jakub-g?tab=profile">active member since 2011</a></dd>
+        <dd><a target="_blank" href="https://stackoverflow.com/users/245966/jakub-g?tab=profile">member since 2011</a></dd>
       </dl>
     </div>
     <div class="contact-secondary">
@@ -569,7 +574,7 @@
             <a href="https://calendar.perfplanet.com/2018/getting-started-with-web-performance-2019-beginners-guide/">
               Getting started with web performance
             </a></li>
-            <li>Presented at <a href="https://2019.rivieradev.fr/orateur/575">RivieraDEV</a> 2019:
+            <li><strong>Presented at <a href="https://2019.rivieradev.fr/orateur/575">RivieraDEV</a> 2019:</strong>
             <a href="https://jakub.gieryluk.net/slides/rivieradev/">Practical Intro to Web Performance</a></li>
           </ul>
         </li>
@@ -619,9 +624,9 @@
           Other deliveries:
           <ul>
             <li>Defined organization-wide browser support policy</li>
-            <li>Contributed to several post-mortem investigations &amp; took actions to avoid issues from re-occurring
-            (improved production deployment checklist, improved monitoring dashboards)</li>
-            <li>Led the efforts to increase logs retention (5d -> 21d) to improve regressions investigations</li>
+            <li>Contributed to several post-mortem investigations &amp; <strong>took actions to prevent issues from re-occurring</strong>
+              <br>(improved production deployment checklist, improved monitoring dashboards)</li>
+            <li>Led the efforts to <strong>increase logs retention (5d -> 21d) to improve regressions investigations</strong></li>
             <li>Re-defined localization process &amp; tooling</li>
             <li>Made automated test suite more reliable by moving from SauceLabs to headless Chrome in Docker</li>
           </ul>
@@ -687,7 +692,7 @@
         <p class="description">
           <ul>
             <li>Rebuilt from scratch a ~2MM <abbr title="Monthly Active Users">MAU</abbr> travel app
-             (Android &amp; web) using Ionic/Cordova/Angular.js</li>
+             (Android &amp; web) using Ionic/Cordova/Angular.js (3 dev team)</li>
             <li><a href="https://play.google.com/store/apps/details?id=com.amadeus.cmt.client.android&hl=en">Google Play Store</a>
               <strong>user rating soared to 4.5</strong>
             </li>
@@ -695,7 +700,7 @@
 
           Responsibilities:
           <ul>
-            <li>wrote <strong>robust front-end code</strong>, automated tests (~70% coverage), specs; code reviews; tooling</li>
+            <li>wrote <strong>robust front-end code</strong>, automated tests (~70% coverage), specs; extensive <strong>code reviews</strong>; tooling</li>
             <li><strong>refined features and APIs</strong> with product owner, backend and iOS teams</li>
             <li>volunteered in security discussions &amp; rotated in scrum master role</li>
             <li>maintained legacy app (bug fixes, code reviews, perf optimizations)</li>
@@ -703,15 +708,14 @@
 
           Major deliveries:
           <ul>
-            <li><strong>debugged and resolved several critical issues</strong> with Android app
-              (impossible to update the app; to log in; to connect over HTTPS)</li>
+            <li><strong>debugged &amp; resolved several critical issues</strong> with Android app
+              (can't update the app / log in / connect over HTTPS)</li>
             <li>led the migration from the legacy web app in a <strong>smooth and backward-compatible way</strong></li>
             <li>set up a robust, automated build infrastructure on top of Jenkins, including a HipChat bot</li>
             <li>authentication, seamless account activation, forgot password flows</li>
             <li>deep links and push notifications handling</li>
             <li>date/time &amp; internationalization handling</li>
             <li>integration with Google Places API</li>
-            <li>parts of the UI of the app</li>
           </ul>
 
           <ul class="tags">
@@ -727,11 +731,11 @@
             <li>Jenkins</li>
             <li>Chrome DevTools</li>
             <li>NodeJS</li>
+            <li>npm</li>
+            <li>bower</li>
             <li>HTTPS</li>
             <li>Apache</li>
             <li class="minor">Gulp</li>
-            <li>bower</li>
-            <li>npm</li>
             <li>bash</li>
           </ul>
         </p>
@@ -752,24 +756,21 @@
           <strong>used by 100+ developers</strong>, and related tools.<br class="noprint">
 
           <ul>
-            <li>Shipped new features, with <strong>strong backward &amp; cross-browser compatibility</strong>; fixed bugs</li>
+            <li>Shipped new features, with <strong>strong backward &amp; cross-browser compatibility</strong></li>
+            <li>Debugged compatibility issues in <strong>complex single-page web applications</strong></li>
             <li><a href="https://github.com/attester/attester/graphs/contributors">Improved test tools</a>,
               CI / build automation &amp; their performance, tooling</li>
-            <li>Release management</li>
             <li>Wrote docs and
-              <a href="http://web.archive.org/web/20200214203802/http://ariatemplates.com/blog/category/debugging/">blog articles</a>,
-              support</li>
+              <a href="http://web.archive.org/web/20200214203802/http://ariatemplates.com/blog/category/debugging/">blog
+              articles</a>; technical support for external teams</li>
 
-            <li><strong>Technical expert role in a team of ~15</strong> developers
+            <li>Internal <strong>technical expert role (1 of 5) in a team of ~15</strong> developers
               <ul>
-                <li>participated in technical discussions</li>
-                <li>established best practices</li>
+                <li>contributed to technical discussions; established best practices</li>
                 <li>code reviews and code integration</li>
+                <li>release management</li>
                 <li>presented in several knowledge sharing sessions</li>
               </ul>
-
-            <li>Extensive experience in <strong>debugging complex single-page web applications</strong>,
-              cross-browser compatibility and front-end unit testing</li>
           </ul>
         </p>
 
@@ -779,6 +780,8 @@
           <li class="minor">CSS3</li>
           <li>Git</li>
           <li>GitHub</li>
+          <li>NodeJS</li>
+          <li>npm</li>
           <li>TravisCI</li>
           <li>JSHint</li>
           <li>Firebug</li>
@@ -786,8 +789,6 @@
           <li>IE DevTools</li>
           <li class="minor">PhantomJS</li>
           <li>bash</li>
-          <li>NodeJS</li>
-          <li>npm</li>
           <li>GruntJS</li>
           <li>Fiddler</li>
         </ul>
