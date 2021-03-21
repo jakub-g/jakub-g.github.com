@@ -9,6 +9,9 @@
   <script>if (location.protocol == 'http:') location.protocol = 'https:'</script>
   <style id="print-and-nonprint"></style>
   <style id="dark-theme" media="screen">
+    .onlyprint {
+      display: none !important;
+    }
     body {
       color: #CCC;
       background-color: rgb(21, 32, 43);
@@ -47,6 +50,9 @@
     }
   </style>
   <style id="light-theme"><!-- note: light theme is screen and print -->
+    .onlyprint {
+      display: none !important;
+    }
     body {
       color: #000;
       background-color: #FCFCFC;
@@ -586,7 +592,7 @@
       </h3>
       <article>
         <p class="description">
-          Improving loading time of Dailymotion Player (350MM <abbr title="Monthly Active Users">MAU</abbr>).
+          Improving loading time of Dailymotion video player (350MM <abbr title="Monthly Active Users">MAU</abbr>).
 
           <ul>
             <li>Researched &amp; documented player internals and optimization opportunities</li>
@@ -628,6 +634,7 @@
         </p>
       </article>
     </div>
+
     <div class="entry">
       <h3>
         Android native developer,
@@ -659,6 +666,9 @@
         </p>
       </article>
     </div>
+
+    <div class="entry onlyprint"><center><em>see more on next page</em></center></div>
+
     <div class="entry">
       <h3>
         Front-end developer (Android &amp; web),
