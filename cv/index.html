@@ -7,7 +7,11 @@
   <title>Jakub Gieryluk - software engineer - CV</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <script>if (location.protocol == 'http:') location.protocol = 'https:'</script>
-  <style id="print-and-nonprint"></style>
+  <style id="print-and-nonprint">
+    .email:after {
+      content: '@gmail.com';
+    }
+  </style>
   <style id="dark-theme" media="screen">
     .onlyprint {
       display: none !important;
@@ -531,17 +535,11 @@
   <section id="contact">
     <div class="contact-primary">
       <dl class="twocolumn">
-        <dt><i class="fa fa-flag"></i> nationality &amp; residence</dt>
-        <dd>Polish (EU national); residing in France</dd>
+        <dt><i class="fa fa-envelope"></i> email</dt>
+        <dd class="email">jakub.g.opensource</dd>
 
-        <dt><i class="fa fa-envelope"></i> gmail</dt>
-        <dd>jakub.g.opensource or jakub.gieryluk</dd>
-
-        <dt><i class="fa fa-link"></i> homepage</dt>
+        <dt><i class="fa fa-link"></i> homepage &amp; blog</dt>
         <dd><a target="_blank" class="homepage" href="https://jakub.gieryluk.net/">https://jakub.gieryluk.net</a></dd>
-
-        <dt><i class="fa fa-link"></i> blog</dt>
-        <dd><a target="_blank" class="homepage" href="https://jakub.gieryluk.net/blog/">https://jakub.gieryluk.net/blog/</a></dd>
 
         <dt><i class="fa fa-github"></i> github</dt>
         <dd><a target="_blank" href="https://github.com/jakub-g">@jakub-g</a> since 2012</dd>
@@ -552,9 +550,6 @@
     </div>
     <div class="contact-secondary">
       <dl>
-        <dt class="noprint"><i class="fa fa-flag"></i> languages</dt>
-        <dd class="noprint">English, Polish, French</dd>
-
         <dt class="noprint"><i class="fa fa-link"></i> speakerdeck</dt>
         <dd class="noprint"><a target="_blank" href="https://speakerdeck.com/jakubg">see my presentations</a></dd>
 
@@ -594,13 +589,12 @@
             but also Android native, Java, PHP</li>
           </ul>
         </li>
-        <li>20 years total experience (including master <abbr title="Computer Science">CS</abbr> studies and hobby / part time web dev)</li>
       </ul>
     </div>
   </section>
 
   <section id="exp" class="high-level-container">
-    <h2>Professional experience, full-time
+    <h2>Professional experience
       <span class="noprint click-to-expand" title="click each header to expand/collapse">(click to expand)</span></h2>
 
     <div class="entry" title="click to expand">
@@ -633,7 +627,7 @@
           <ul>
             <li>Defined data-driven <strong>organization-wide browser support policy</strong></li>
             <li>Contributed to several post-mortem investigations &amp; <strong>took actions to prevent issues from re-occurring</strong>
-              <br>(improved production deployment checklist, improved monitoring dashboards)</li>
+              <br />(improved production deployment checklist, improved monitoring dashboards)</li>
             <li>Led the efforts to <strong>increase logs retention (5d -> 21d) to improve regressions investigations</strong></li>
             <li>Re-defined localization process &amp; tooling</li>
             <li>Made automated test suite more reliable by moving from SauceLabs to headless Chrome in Docker</li>
@@ -761,7 +755,7 @@
         <p class="description">
           <a href="https://github.com/ariatemplates/ariatemplates/graphs/contributors">Core developer</a>
           of an open-source UI &amp; templating framework-library,
-          <strong>used by 100+ developers</strong>, and related tools.<br class="noprint">
+          <strong>used by 100+ developers</strong>, and related tools.<br class="noprint" />
 
           <ul>
             <li>Shipped new features, with <strong>strong backward &amp; cross-browser compatibility</strong></li>
@@ -779,6 +773,7 @@
                 <li>release management</li>
                 <li>presented in several knowledge sharing sessions</li>
               </ul>
+            </li>
           </ul>
         </p>
 
@@ -800,11 +795,6 @@
         </ul>
       </article>
     </div>
-  </section>
-
-  <section id="exp2" class="high-level-container">
-    <h2>Professional experience, part-time
-      <span class="noprint click-to-expand" title="click each header to expand/collapse">(click to expand)</span></h2>
 
     <div class="entry" title="click to expand">
       <h3>
